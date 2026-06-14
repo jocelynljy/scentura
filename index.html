@@ -280,11 +280,18 @@
   .checks{display:grid;gap:8px;}
   .checks label{display:flex;align-items:center;gap:10px;font-size:14.5px;color:var(--ink);font-weight:400;cursor:pointer;}
   .checks input{width:16px;height:16px;accent-color:var(--gold);}
+  .cmethods{display:flex;flex-wrap:wrap;gap:8px;}
+  .cm{font-family:var(--sans);font-size:13px;color:var(--ink-soft);background:#fff;border:1px solid var(--line-dk);padding:8px 14px;cursor:pointer;transition:background .2s,color .2s,border-color .2s;}
+  .cm.on{background:var(--gold);color:#fff;border-color:var(--gold);}
+  @media(hover:hover){.cm:not(.on):hover{border-color:var(--gold);color:var(--gold-deep);}}
+  .cmfields{display:grid;gap:8px;}
+  .cmfields:has(.cmf:not([hidden])){margin-top:10px;}
   .submitbtn{display:block;width:100%;text-align:center;font-size:14.5px;letter-spacing:.005em;font-weight:600;padding:16px 30px;border-radius:0;background:linear-gradient(135deg,var(--ink) 0%, var(--gold) 130%);color:#fff;border:0;cursor:pointer;transition:transform .2s var(--ease-out), box-shadow .25s;margin-top:6px;font-family:var(--sans);box-shadow:var(--shadow);}
   @media(hover:hover){.submitbtn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(168,78,59,.22);}}
   .submitbtn:active{transform:scale(.99);}
   .fstatus{margin:14px 0 0;font-size:14px;color:var(--gold-deep);text-align:center;min-height:1px;}
-  .modal .direct{margin:18px 0 0;font-size:13px;color:var(--ink-soft);text-align:center;}
+  .fconsent{margin:12px 0 0;font-size:11.5px;line-height:1.5;color:var(--faint);text-align:center;}
+  .modal .direct{margin:16px 0 0;font-size:13px;color:var(--ink-soft);text-align:center;}
   .modal .direct a{color:var(--gold-deep);text-decoration:none;}
 
   /* imagery */
@@ -601,21 +608,36 @@
           <option>Dessert &amp; ice cream</option><option>Restaurant</option><option>Retail / shop</option><option>Other</option>
         </select>
       </div>
-      <div class="field"><label>Best way to reach you</label><input type="text" name="Best contact" placeholder="Email, phone, or @instagram" required></div>
-      <div class="field"><label>Website <span class="opt">(optional)</span></label><input type="text" name="Website" placeholder="yourbrand.com"></div>
-      <div class="field"><label>Instagram <span class="opt">(optional)</span></label><input type="text" name="Instagram" placeholder="@yourbrand"></div>
+      <div class="field"><label>Your brand online <span class="opt">(website or Instagram)</span></label><input type="text" name="Website" placeholder="yourbrand.com" autocomplete="off"><input type="text" name="Brand Instagram" placeholder="@yourbrand" autocomplete="off" style="margin-top:8px;"></div>
+      <div class="field"><label>How should we reach you?</label>
+        <div class="cmethods">
+          <button type="button" class="cm" data-cm="Instagram">Instagram</button>
+          <button type="button" class="cm" data-cm="Email">Email</button>
+          <button type="button" class="cm" data-cm="WhatsApp">WhatsApp</button>
+          <button type="button" class="cm" data-cm="Telegram">Telegram</button>
+          <button type="button" class="cm" data-cm="Phone">Phone call</button>
+        </div>
+        <div class="cmfields">
+          <input class="cmf" data-for="Instagram" type="text" name="Instagram" placeholder="@your handle" autocomplete="off" hidden disabled>
+          <input class="cmf" data-for="Email" type="text" name="Email" placeholder="you@email.com" autocomplete="off" hidden disabled>
+          <input class="cmf" data-for="WhatsApp" type="text" name="WhatsApp" placeholder="+65 9123 4567" autocomplete="off" hidden disabled>
+          <input class="cmf" data-for="Telegram" type="text" name="Telegram" placeholder="@your handle" autocomplete="off" hidden disabled>
+          <input class="cmf" data-for="Phone" type="text" name="Phone" placeholder="+65 9123 4567" autocomplete="off" hidden disabled>
+        </div>
+      </div>
       <div class="field"><label>What are you looking for? <span class="opt">(optional)</span></label>
         <div class="checks">
           <label><input type="checkbox" name="Looking for" value="More foot traffic & sales"> More foot traffic &amp; sales</label>
           <label><input type="checkbox" name="Looking for" value="A signature brand scent"> A signature brand scent</label>
           <label><input type="checkbox" name="Looking for" value="Scented packaging & merch"> Scented packaging &amp; merch</label>
-          <label><input type="checkbox" name="Looking for" value="Custom scented blooms"> Custom scented blooms</label>
-          <label><input type="checkbox" name="Looking for" value="Not sure yet"> Not sure yet — just curious</label>
+          <label><input type="checkbox" name="Looking for" value="Scented menus & takeaway"> Scented menus &amp; takeaway</label>
+          <label><input type="checkbox" name="Looking for" value="Not sure yet"> Not sure yet, just curious</label>
         </div>
       </div>
       <div class="field"><label>Anything else? <span class="opt">(optional)</span></label><textarea name="Message"></textarea></div>
       <button class="submitbtn" type="submit">Request my pilot</button>
       <p id="formStatus" class="fstatus"></p>
+      <p class="fconsent">By sending this, you agree we may use your details to contact you about a pilot. We never share them, and you can ask us to delete them anytime.</p>
     </form>
     <p class="direct">Or reach me directly — <a href="https://t.me/jocelynnnjy" target="_blank" rel="noopener">Telegram</a> · <a href="https://www.linkedin.com/in/jocelynlimjinyan/" target="_blank" rel="noopener">LinkedIn</a> · <a href="mailto:limjy.jocelyn@gmail.com">email</a></p>
   </div>
@@ -672,14 +694,26 @@
     var form=document.getElementById('pilotForm');
     if(!form) return;
     var status=document.getElementById('formStatus');
+    // contact-method chips reveal their field
+    form.querySelectorAll('.cm').forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var on=btn.classList.toggle('on');
+        var inp=form.querySelector('.cmf[data-for="'+btn.getAttribute('data-cm')+'"]');
+        if(inp){ inp.hidden=!on; inp.disabled=!on; if(on){ setTimeout(function(){inp.focus();},40); } else { inp.value=''; } }
+      });
+    });
+    function val(n){ var el=form.querySelector('[name="'+n+'"]'); return el?el.value.trim():''; }
     form.addEventListener('submit',function(e){
       e.preventDefault();
+      if(!val('Website') && !val('Brand Instagram')){ status.textContent='Please add your website or Instagram.'; return; }
+      var hasMethod=[].slice.call(form.querySelectorAll('.cmf')).some(function(i){return !i.disabled && i.value.trim();});
+      if(!hasMethod){ status.textContent='Please pick at least one way to reach you and fill it in.'; return; }
       status.textContent='Sending…';
       var data=new FormData(form);
       fetch('https://formsubmit.co/ajax/limjy.jocelyn@gmail.com',{method:'POST',headers:{'Accept':'application/json'},body:new URLSearchParams(data)})
         .then(function(r){return r.json();})
-        .then(function(j){ if(j.success){ form.reset(); status.textContent="Thank you — your application is in. I'll be in touch very soon."; } else { status.textContent="That didn't send — please reach me on Telegram instead."; } })
-        .catch(function(){ status.textContent="That didn't send — please reach me on Telegram instead."; });
+        .then(function(j){ if(j.success){ form.reset(); form.querySelectorAll('.cm.on').forEach(function(b){b.classList.remove('on');}); form.querySelectorAll('.cmf').forEach(function(i){i.hidden=true;i.disabled=true;}); status.textContent="Thank you, your application is in. I'll be in touch very soon."; } else { status.textContent="That didn't send, please reach me on Telegram instead."; } })
+        .catch(function(){ status.textContent="That didn't send, please reach me on Telegram instead."; });
     });
   })();
 </script>
