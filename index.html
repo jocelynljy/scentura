@@ -109,7 +109,7 @@
   .btn:active{transform:translateY(0) scale(.99);}
 
   /* hero */
-  .hero{padding:120px 0 124px;overflow:hidden;}
+  .hero{padding:104px 0 64px;overflow:hidden;}
   @media(max-width:880px){.hero{padding:56px 0 60px;}}
   .hero-stage{position:relative;}
   .hero-stage::before{content:"";position:absolute;width:680px;height:680px;border-radius:50%;background:radial-gradient(circle, rgba(196,100,79,.10), transparent 68%);top:-260px;left:50%;transform:translateX(-50%);pointer-events:none;z-index:0;}
@@ -175,7 +175,7 @@
   .formats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px;}
   @media(max-width:880px){.formats{grid-template-columns:1fr;}}
   .fcard{padding:0;}
-  .fcard .fimg{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;}
+  .fcard .fimg{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:0;}
   .fcard .fbody{padding:28px 30px 32px;}
   .fcard h3{margin:12px 0 8px;font-size:23px;font-weight:600;}
   .fcard p{margin:0;font-size:15.5px;}
@@ -346,7 +346,7 @@
       <div class="scenttrio reveal">
         <figure><img src="bread.jpg" alt="Fresh sourdough bread" loading="lazy" decoding="async"><figcaption>Fresh bread</figcaption></figure>
         <figure><img src="bubble_tea.jpg" alt="Brown sugar bubble tea with pearls" loading="lazy" decoding="async"><figcaption>Brown-sugar milk tea</figcaption></figure>
-        <figure><img src="ice_cream.jpg" alt="Artisan vanilla ice cream" loading="lazy" decoding="async"><figcaption>Vanilla</figcaption></figure>
+        <figure><img src="ice_cream.jpg" alt="Vanilla bean ice cream with butterscotch sauce" loading="lazy" decoding="async"><figcaption>Vanilla &amp; butterscotch</figcaption></figure>
       </div>
       <div class="steps">
         <div class="stepr crd reveal"><div class="stepn"><svg class="stepicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 20c-1.3-1.6 0-3 0-4.6S5.7 13 7 11.4 8.3 8.8 7 7.2 5.7 4.6 7 3"/><path d="M12 20c-1.3-1.6 0-3 0-4.6S10.7 13 12 11.4 13.3 8.8 12 7.2 10.7 4.6 12 3"/><path d="M17 20c-1.3-1.6 0-3 0-4.6S15.7 13 17 11.4 18.3 8.8 17 7.2 15.7 4.6 17 3"/></svg><span class="stepnum">01</span></div><div><h3>We match your scent</h3><p>Tuned to your hero product and sampled for you to approve first. Real, never synthetic.</p></div></div>
@@ -423,7 +423,7 @@
           <ul class="plist">
             <li>Your matched signature scent in the air</li>
             <li>Kept fresh, cancel anytime</li>
-            <li>Add scented products or packaging</li>
+            <li>Scales to more outlets as you grow</li>
           </ul>
           <a class="btn ghost pbtn" data-modal href="#apply">Get a quote</a>
         </div>
@@ -433,7 +433,7 @@
           <p class="psub">For brands that want the whole sensory identity.</p>
           <ul class="plist">
             <li>A bespoke blend made for your brand</li>
-            <li>Scented packaging, labels and takeaway</li>
+            <li>Scented products, packaging and takeaway</li>
             <li>One scent across every outlet</li>
           </ul>
           <a class="btn ghost pbtn" data-modal href="#apply">Let's talk</a>
@@ -549,6 +549,10 @@
 </div>
 
 <script>
+  // always open at the top on load / refresh
+  if('scrollRestoration' in history){history.scrollRestoration='manual';}
+  window.addEventListener('load',function(){ if(!location.hash){window.scrollTo(0,0);} });
+
   // mobile nav
   (function(){
     var tog=document.querySelector('.navtoggle'), navEl=document.getElementById('nav');
@@ -574,8 +578,8 @@
     if('IntersectionObserver' in window){
       var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});},{threshold:.08,rootMargin:'0px 0px -5% 0px'});
       rev.forEach(function(el){ro.observe(el);});
-      // safety net: never leave content hidden
-      setTimeout(showAll, 1600);
+      // ultimate failsafe only (kept long so scroll animation is preserved)
+      setTimeout(showAll, 8000);
     } else { showAll(); }
   })();
 
