@@ -113,13 +113,20 @@
   @media(max-width:880px){.hero{padding:56px 0 60px;}}
   .hero-stage{position:relative;}
   .hero-stage::before{content:"";position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle, rgba(196,100,79,.10), transparent 68%);top:-200px;right:-120px;pointer-events:none;z-index:0;}
+  .hero-mist{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;}
+  .hero-mist span{position:absolute;bottom:-25%;width:42%;height:65%;border-radius:50%;background:radial-gradient(circle, rgba(196,100,79,.16), transparent 64%);filter:blur(38px);opacity:0;animation:mistrise 17s ease-in-out infinite;}
+  .hero-mist span:nth-child(1){left:4%;animation-delay:0s;}
+  .hero-mist span:nth-child(2){left:30%;width:36%;animation-delay:6s;}
+  .hero-mist span:nth-child(3){left:54%;width:34%;animation-delay:11s;}
+  @keyframes mistrise{0%{transform:translateY(22%) scale(.9);opacity:0;}28%{opacity:.7;}60%{opacity:.45;}100%{transform:translateY(-42%) scale(1.22);opacity:0;}}
+  @keyframes kenburns{from{transform:scale(1.02);}to{transform:scale(1.1) translate(-1.2%,-1.2%);}}
   .herogrid{display:grid;grid-template-columns:1.02fr .98fr;gap:52px;align-items:center;}
   .hero-content{position:relative;z-index:1;text-align:left;}
   .hero-content h1{max-width:none;margin:18px 0 0;}
   .hero-content .lede{margin:24px 0 0;max-width:56ch;}
   .hero-content .cta{margin-top:32px;display:flex;gap:14px;justify-content:flex-start;flex-wrap:wrap;}
-  .heroimg{position:relative;z-index:1;}
-  .heroimg img{display:block;width:100%;height:clamp(380px,56vh,560px);object-fit:cover;border-radius:14px;}
+  .heroimg{position:relative;z-index:1;overflow:hidden;border-radius:14px;}
+  .heroimg img{display:block;width:100%;height:clamp(380px,56vh,560px);object-fit:cover;border-radius:14px;animation:kenburns 22s ease-in-out infinite alternate;}
   .heroimg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg, var(--paper), rgba(246,240,230,0) 18%);pointer-events:none;}
   .reassure{margin-top:18px;font-family:var(--sans);font-size:12.5px;letter-spacing:.06em;color:var(--faint);text-transform:uppercase;font-weight:600;}
   .reassure b{color:var(--gold-deep);font-weight:700;}
@@ -267,6 +274,8 @@
     .reveal{opacity:1 !important;transform:none !important;transition:none !important;}
     .hero-content > *{opacity:1 !important;animation:none !important;}
     .hero-motif{animation:none !important;}
+    .heroimg img{animation:none !important;}
+    .hero-mist span{animation:none !important;opacity:0 !important;}
     .btn:active,.submitbtn:active,.crd:hover,.prow:hover{transform:none;}
     .modal{transition:opacity .2s;}
   }
@@ -294,6 +303,7 @@
   <!-- HERO -->
   <section id="home" class="hero">
     <div class="wrap herogrid hero-stage">
+      <div class="hero-mist" aria-hidden="true"><span></span><span></span><span></span></div>
       <div class="hero-content">
         <span class="label">Sensory branding for cold F&amp;B</span>
         <h1>Make your shop<br><em class="acc">impossible</em> to walk past.</h1>
