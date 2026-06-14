@@ -564,7 +564,7 @@
         <p class="mt16" style="max-width:48ch;margin:16px auto 0;">Free for two weeks, fully managed, no lock-in. If it doesn't lift your counter, we take it away — at no cost.</p>
         <div class="mt24"><a class="btn" data-modal href="#apply" style="background:var(--paper);color:var(--ink);"><span>Claim a founding pilot</span> <span class="arr">→</span></a></div>
         <p class="mt24" style="font-size:13px;color:#c9bca6;">Or reach me directly</p>
-        <div class="clinks"><a href="https://t.me/jocelynnnjy" target="_blank" rel="noopener">Telegram</a><a href="https://www.linkedin.com/in/jocelynlimjinyan/" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:limjy.jocelyn@gmail.com">Email</a></div>
+        <div class="clinks"><a href="https://t.me/jocelynnnjy" target="_blank" rel="noopener">Telegram</a><a href="https://www.linkedin.com/in/jocelynlimjinyan/" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:limjy.jocelyn@gmail.com">limjy.jocelyn@gmail.com</a></div>
       </div>
     </div>
   </section>
@@ -587,10 +587,11 @@
     <span class="label" style="color:var(--gold-deep);">Apply for a founding pilot</span>
     <h3 id="modalTitle">Tell us about your brand.</h3>
     <p style="font-size:14.5px;margin-bottom:6px;">A limited number of founding partners get a free two-week pilot. The basics are all we need to start — the rest is optional.</p>
-    <form id="pilotForm" action="https://api.web3forms.com/submit" method="POST">
-      <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
-      <input type="hidden" name="subject" value="New Scentura founding-pilot application">
-      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+    <form id="pilotForm" action="https://formsubmit.co/limjy.jocelyn@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New Scentura founding-pilot application">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
       <div class="field"><label>Your name</label><input type="text" name="Name" required></div>
       <div class="field"><label>Business name</label><input type="text" name="Business" required></div>
       <div class="field"><label>What you sell</label>
@@ -675,7 +676,7 @@
       e.preventDefault();
       status.textContent='Sending…';
       var data=new FormData(form);
-      fetch('https://api.web3forms.com/submit',{method:'POST',body:data})
+      fetch('https://formsubmit.co/ajax/limjy.jocelyn@gmail.com',{method:'POST',headers:{'Accept':'application/json'},body:new URLSearchParams(data)})
         .then(function(r){return r.json();})
         .then(function(j){ if(j.success){ form.reset(); status.textContent="Thank you — your application is in. I'll be in touch very soon."; } else { status.textContent="That didn't send — please reach me on Telegram instead."; } })
         .catch(function(){ status.textContent="That didn't send — please reach me on Telegram instead."; });
