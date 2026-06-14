@@ -136,7 +136,9 @@
   .crd > *{position:relative;z-index:1;}
 
   .triad{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-  .triad > div{padding:32px 28px;}
+  .triad > div{padding:0;}
+  .triad .cimg{display:block;width:100%;height:160px;object-fit:cover;}
+  .triad .cbody{padding:24px 26px 28px;}
   .triad h3{margin-bottom:6px;font-weight:600;font-size:25px;}
   .triad p{margin:0;font-size:15.5px;}
   @media(max-width:880px){.triad{grid-template-columns:1fr;}}
@@ -226,6 +228,17 @@
   .modal .direct{margin:18px 0 0;font-size:13px;color:var(--ink-soft);text-align:center;}
   .modal .direct a{color:var(--gold-deep);text-decoration:none;}
 
+  /* imagery */
+  .imgband{position:relative;width:100%;line-height:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;}
+  .imgband img{display:block;width:100%;height:clamp(300px,46vh,540px);object-fit:cover;}
+  .imgband::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(33,27,22,.20),transparent 26%,transparent 74%,rgba(33,27,22,.16));pointer-events:none;}
+  .scenttrio{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px;}
+  .scenttrio figure{margin:0;}
+  .scenttrio img{display:block;width:100%;height:clamp(150px,20vw,200px);object-fit:cover;border-top:3px solid var(--gold);}
+  .scenttrio figcaption{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--ink-soft);margin-top:9px;}
+  @media(max-width:560px){.scenttrio{gap:10px;}.scenttrio figcaption{font-size:13px;}}
+  .whyimg{display:block;width:100%;height:clamp(220px,32vh,360px);object-fit:cover;border-top:3px solid var(--gold-soft);}
+
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto;}
     .reveal{opacity:1 !important;transform:none !important;transition:none !important;}
@@ -280,6 +293,9 @@
     </div>
   </section>
 
+  <!-- SENSORY IMAGE BAND -->
+  <div class="imgband"><img src="bread.jpg" alt="Fresh sourdough bread, steaming, on a wooden board" loading="eager" decoding="async"></div>
+
   <!-- WHY IT WORKS -->
   <section class="band glow">
     <div class="wrap center">
@@ -288,9 +304,9 @@
       <div class="muted-rule reveal" style="transition-delay:100ms;"></div>
       <p class="lede reveal" style="margin:0 auto;transition-delay:120ms;">It's the one sense wired straight to memory and emotion — no filter, no off switch. The right scent at your counter makes the decision half-made before they've read a word. Three things happen at once.</p>
       <div class="triad mt56" style="text-align:left;">
-        <div class="crd reveal"><span class="label">01</span><h3 class="mt8">Crave</h3><p>A warm, true-to-your-product scent turns a passer-by into a sale.</p></div>
-        <div class="crd reveal" style="transition-delay:90ms;"><span class="label">02</span><h3 class="mt8">Linger</h3><p>A space that smells good is a space people stay in — and spend in.</p></div>
-        <div class="crd reveal" style="transition-delay:180ms;"><span class="label">03</span><h3 class="mt8">Remember</h3><p>The scent they can't quite name is the one that brings them back.</p></div>
+        <div class="crd reveal"><img class="cimg" src="waffles.jpg" alt="Belgian waffles with vanilla ice cream and chocolate" loading="lazy" decoding="async"><div class="cbody"><span class="label">01</span><h3 class="mt8">Crave</h3><p>A warm, true-to-your-product scent turns a passer-by into a sale.</p></div></div>
+        <div class="crd reveal" style="transition-delay:90ms;"><img class="cimg" src="espresso.jpg" alt="Espresso pouring into a cup with rising steam" loading="lazy" decoding="async"><div class="cbody"><span class="label">02</span><h3 class="mt8">Linger</h3><p>A space that smells good is a space people stay in, and spend in.</p></div></div>
+        <div class="crd reveal" style="transition-delay:180ms;"><img class="cimg" src="chocolate_tart.jpg" alt="Dark chocolate tart finished with sea salt" loading="lazy" decoding="async"><div class="cbody"><span class="label">03</span><h3 class="mt8">Remember</h3><p>The scent they can't quite name is the one that brings them back.</p></div></div>
       </div>
     </div>
   </section>
@@ -301,6 +317,11 @@
       <span class="label reveal">How it works</span>
       <h2 class="reveal mt16" style="transition-delay:60ms;">Scent at the moment of decision.</h2>
       <p class="lede reveal mt16" style="transition-delay:100ms;">We match the right scent to your product — you smell and approve it first — deliver it where people decide, and measure what it does. Starting with a free pilot.</p>
+      <div class="scenttrio reveal">
+        <figure><img src="bread.jpg" alt="Fresh sourdough bread" loading="lazy" decoding="async"><figcaption>Fresh bread</figcaption></figure>
+        <figure><img src="bubble_tea.jpg" alt="Brown sugar bubble tea with pearls" loading="lazy" decoding="async"><figcaption>Brown-sugar milk tea</figcaption></figure>
+        <figure><img src="ice_cream.jpg" alt="Artisan vanilla ice cream" loading="lazy" decoding="async"><figcaption>Vanilla</figcaption></figure>
+      </div>
       <div class="steps">
         <div class="stepr crd reveal"><div class="stepn">01</div><div><h3>We match your scent</h3><p>Tuned to your hero product — fresh bread, brown-sugar milk tea, vanilla — and sampled for you to approve first. Real, never synthetic.</p></div></div>
         <div class="stepr crd reveal"><div class="stepn">02</div><div><h3>We deliver it, your way</h3><p>An invisible diffuser, a beautiful object, or your packaging — placed at the counter or entrance. We set it up; you do nothing.</p></div></div>
@@ -339,7 +360,8 @@
         <div><div class="num">3–23%</div><div class="cap">rise in spending across studies — 2020 meta-analysis of ambient scent</div></div>
       </div>
       <p class="micro reveal" style="margin-top:16px;color:#9a8f7d;font-style:italic;">These are retail studies — a guide to the effect, not a promise. We measure the real number for your shop during the pilot.</p>
-      <div class="proof" style="margin-top:34px;">
+      <img class="whyimg reveal" src="bubble_tea.jpg" alt="Brown sugar bubble tea, the product scent-led tea brands are built on" loading="lazy" decoding="async">
+      <div class="proof" style="margin-top:26px;">
         <div class="reveal"><h3>HEYTEA</h3><p>Its store scent is so loved it went viral — and HEYTEA now sells it as candles, room sprays, perfume and diffusers.</p></div>
         <div class="reveal" style="transition-delay:80ms;"><h3>Chagee</h3><p>A signature tea fragrance turned into a perfume line, aroma boxes and fragrance cards — scent as a brand asset.</p></div>
         <div class="reveal" style="transition-delay:160ms;"><h3>Molly Tea</h3><p>Its jasmine signature extended into sachets, candles and diffusers — "smells like walking into the store."</p></div>
