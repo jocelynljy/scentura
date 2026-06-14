@@ -25,7 +25,7 @@
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;overflow-x:clip;}
-  body{margin:0;background:radial-gradient(135% 80% at 50% -12%, #faf5ea 0%, #f3ecdd 48%, #ece2cd 100%) fixed, radial-gradient(58% 44% at 100% 1%, rgba(196,100,79,.07), transparent 60%) fixed, radial-gradient(55% 46% at 0% 99%, rgba(184,128,74,.07), transparent 60%) fixed;color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.8;-webkit-font-smoothing:antialiased;}
+  body{margin:0;background:radial-gradient(135% 80% at 50% -12%, #faf5ea 0%, #f3ecdd 48%, #ece2cd 100%) fixed, radial-gradient(58% 44% at 100% 1%, rgba(196,100,79,.07), transparent 60%) fixed, radial-gradient(55% 46% at 0% 99%, rgba(184,128,74,.07), transparent 60%) fixed, radial-gradient(95% 70% at 50% 50%, rgba(196,100,79,.035), transparent 72%) fixed;color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.8;-webkit-font-smoothing:antialiased;}
   body.locked{overflow:hidden;}
   /* paper grain */
   body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:60;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
@@ -152,7 +152,7 @@
   .hero-motif{animation:breathe 7s ease-in-out infinite;}
 
   /* card base shared treatment */
-  .crd{position:relative;background:linear-gradient(177deg,#fffefa 0%,#fbf4e8 100%);border:1px solid var(--card-br);border-top:3px solid var(--gold);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;transition:transform .3s var(--ease-out), box-shadow .3s var(--ease-out);}
+  .crd{position:relative;background:linear-gradient(177deg,#fffefa 0%,#f8efdf 100%);border:1px solid var(--card-br);border-top:3px solid var(--gold);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;transition:transform .3s var(--ease-out), box-shadow .3s var(--ease-out);}
   .crd::after{content:"";position:absolute;left:0;right:0;bottom:0;height:46%;background:linear-gradient(transparent, rgba(196,100,79,.07));opacity:0;transition:opacity .3s var(--ease-out);pointer-events:none;}
   @media(hover:hover){.crd:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}.crd:hover::after{opacity:1;}}
   .crd > *{position:relative;z-index:1;}
@@ -408,38 +408,39 @@
           <span class="ptag">Start here</span>
           <span class="label">Founding Pilot</span>
           <div class="pprice">Free</div>
-          <p class="psub">Two weeks, fully managed, for a limited number of founding partners.</p>
+          <p class="psub">Watch your shop start pulling people in. We handle everything for two weeks. You risk nothing.</p>
           <ul class="plist">
-            <li>We match and set up your scent</li>
-            <li>We measure the lift on your own numbers</li>
-            <li>No machine to buy, no lock-in</li>
+            <li>Your own scent, crafted and set up for you</li>
+            <li>See the difference in your own takings</li>
+            <li>No machine, no contract, nothing to lose</li>
           </ul>
           <a class="btn solid pbtn" data-modal href="#apply"><span>Claim a pilot</span> <span class="arr">→</span></a>
         </div>
         <div class="pcard crd">
           <span class="label">Signature Scent</span>
-          <div class="pprice">from S$225<span class="per">/ outlet, month</span></div>
-          <p class="psub">About S$7.50 a day, earned back in roughly one extra sale.</p>
+          <div class="pprice">from S$270<span class="per">/ outlet · month</span></div>
+          <p class="psub">Just S$9 a day, less than one drink you sell, for a scent people remember you by.</p>
           <ul class="plist">
-            <li>Your matched signature scent in the air</li>
-            <li>Kept fresh, cancel anytime</li>
-            <li>Scales to more outlets as you grow</li>
+            <li>Your signature scent, always in the air</li>
+            <li>We keep it fresh so you never think about it</li>
+            <li>Grows with you, one outlet at a time</li>
           </ul>
           <a class="btn ghost pbtn" data-modal href="#apply">Get a quote</a>
         </div>
         <div class="pcard crd">
           <span class="label">Bespoke &amp; Multi-Outlet</span>
           <div class="pprice">By quote</div>
-          <p class="psub">For brands that want the whole sensory identity.</p>
+          <p class="psub">Become the brand people recognise with their eyes closed.</p>
           <ul class="plist">
-            <li>A bespoke blend made for your brand</li>
-            <li>Scented products, packaging and takeaway</li>
-            <li>One scent across every outlet</li>
+            <li>A scent blended for you, and no one else</li>
+            <li>Carried onto your products and packaging</li>
+            <li>One signature across every door you open</li>
           </ul>
           <a class="btn ghost pbtn" data-modal href="#apply">Let's talk</a>
         </div>
       </div>
-      <p class="micro mt24 reveal" style="font-style:italic;">Starting prices. Final pricing depends on space, scent and scale; multi-outlet and bespoke work is quoted as a package.</p>
+      <p class="reveal" style="text-align:center;max-width:32ch;margin:46px auto 0;font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.6vw,30px);line-height:1.25;color:var(--ink);">Start free. Keep it only when your customers can't stay away.</p>
+      <p class="micro mt16 reveal" style="font-style:italic;text-align:center;">Starting prices. Final pricing depends on space, scent and scale; multi-outlet and bespoke work is quoted as a package.</p>
     </div>
   </section>
 
