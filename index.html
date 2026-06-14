@@ -157,13 +157,20 @@
   @media(hover:hover){.crd:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}.crd:hover::after{opacity:1;}}
   .crd > *{position:relative;z-index:1;}
 
+  /* why it works — sensory cards */
+  .whysec.band{background:radial-gradient(120% 85% at 50% 0%, #f8eedb 0%, #f2e7d1 60%, #ece1cc 100%);}
   .triad{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-  .triad > div{padding:0;}
-  .triad .cimg{display:block;width:100%;height:160px;object-fit:cover;border-radius:12px;}
-  .triad .cbody{padding:24px 26px 28px;}
-  .triad h3{margin-bottom:6px;font-weight:600;font-size:25px;}
-  .triad p{margin:0;font-size:15.5px;}
-  @media(max-width:880px){.triad{grid-template-columns:1fr;}}
+  @media(max-width:880px){.triad{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto;}}
+  .wcard{position:relative;aspect-ratio:3/4;border-radius:20px;overflow:hidden;box-shadow:0 24px 54px -28px rgba(60,42,26,.55);transition:transform .35s var(--ease-out), box-shadow .35s;}
+  .wcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease-out);}
+  .wcard::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(22,13,8,.92) 0%, rgba(22,13,8,.55) 36%, rgba(22,13,8,.12) 64%, transparent 84%);}
+  .wbody{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 24px 28px;text-align:center;color:#fff;}
+  .wbody .wnum{width:34px;height:34px;margin:0 auto 14px;border:1px solid rgba(255,255,255,.55);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:13px;}
+  .wbody h3{font-family:var(--serif);font-size:30px;font-weight:600;color:#fff;line-height:1;letter-spacing:.01em;}
+  .wbody p{font-size:14px;color:rgba(255,255,255,.86);margin:12px auto 0;line-height:1.5;max-width:26ch;}
+  .wbody .wtag{display:inline-block;margin-top:16px;font-family:var(--sans);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-soft);font-weight:700;}
+  @media(hover:hover){.wcard:hover{transform:translateY(-6px);box-shadow:0 34px 64px -26px rgba(60,42,26,.6);}.wcard:hover img{transform:scale(1.06);}}
+  .whyfoot{margin-top:40px;text-align:center;font-family:var(--sans);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--faint);}
 
   /* how it works — glass step cards over warm atmosphere */
   .howsec.band{background:radial-gradient(120% 85% at 50% 0%, #f8eedb 0%, #f2e7d1 62%, #ece1cc 100%);}
@@ -359,17 +366,18 @@
   </section>
 
   <!-- WHY IT WORKS -->
-  <section class="band glow">
+  <section class="band glow whysec">
     <div class="wrap center">
       <span class="label reveal">Why it works</span>
       <h2 class="reveal mt16" style="transition-delay:60ms;">Smell hits the <em class="acc">brain</em><br>before thought does.</h2>
       <div class="muted-rule reveal" style="transition-delay:100ms;"></div>
       <p class="lede reveal" style="margin:0 auto;transition-delay:120ms;">You weren't even hungry. The smell of warm butter hit the air, and you were in the queue before you decided. That is scent: the one sense wired straight to memory and emotion, with no filter and no off switch. At your counter, it makes the decision half-made before a word is read. Three things happen at once.</p>
-      <div class="triad mt56" style="text-align:left;">
-        <div class="crd reveal"><img class="cimg" src="crave.jpg" alt="Freshly baked sourdough loaf with steam rising and a caramelised crust" loading="lazy" decoding="async"><div class="cbody"><span class="label">01</span><h3 class="mt8">Crave</h3><p>A warm, true-to-your-product scent turns a passer-by into a sale.</p></div></div>
-        <div class="crd reveal" style="transition-delay:90ms;"><img class="cimg" src="linger.jpg" alt="A rich espresso being pulled with golden crema and rising steam" loading="lazy" decoding="async"><div class="cbody"><span class="label">02</span><h3 class="mt8">Linger</h3><p>A space that smells good is a space people stay in, and spend in.</p></div></div>
-        <div class="crd reveal" style="transition-delay:180ms;"><img class="cimg" src="remember.jpg" alt="A mirror-glaze dark chocolate tart finished with sea salt and gold leaf" loading="lazy" decoding="async"><div class="cbody"><span class="label">03</span><h3 class="mt8">Remember</h3><p>The scent they can't quite name is the one that brings them back.</p></div></div>
+      <div class="triad mt56">
+        <div class="wcard reveal"><img src="crave.jpg" alt="Freshly baked sourdough loaf with steam rising" loading="lazy" decoding="async"><div class="wbody"><div class="wnum">01</div><h3>Crave</h3><p>A scent sparks the craving before they've even seen the menu.</p><span class="wtag">The spark</span></div></div>
+        <div class="wcard reveal" style="transition-delay:90ms;"><img src="linger.jpg" alt="A rich espresso being pulled with golden crema and rising steam" loading="lazy" decoding="async"><div class="wbody"><div class="wnum">02</div><h3>Linger</h3><p>A space that smells good is a space people stay in, and spend in.</p><span class="wtag">The pull</span></div></div>
+        <div class="wcard reveal" style="transition-delay:180ms;"><img src="remember.jpg" alt="A dark chocolate tart finished with sea salt" loading="lazy" decoding="async"><div class="wbody"><div class="wnum">03</div><h3>Remember</h3><p>The scent they can't quite name is the one that brings them back.</p><span class="wtag">The mark</span></div></div>
       </div>
+      <p class="whyfoot reveal">Not just a fragrance. A sensory experience.</p>
     </div>
   </section>
 
