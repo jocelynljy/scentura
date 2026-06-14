@@ -165,12 +165,21 @@
   .triad p{margin:0;font-size:15.5px;}
   @media(max-width:880px){.triad{grid-template-columns:1fr;}}
 
-  .steps{margin-top:40px;display:grid;gap:16px;}
-  .stepr{display:grid;grid-template-columns:60px 1fr;gap:22px;padding:26px 30px;align-items:start;}
-  .stepn{display:flex;flex-direction:column;align-items:flex-start;gap:9px;}
-  .stepicon{width:24px;height:24px;color:var(--gold);}
-  .stepnum{font-family:var(--serif);font-style:italic;font-size:34px;color:var(--gold);line-height:1;}
-  .stepr h3{margin-bottom:4px;font-size:22px;}.stepr p{margin:0;}
+  /* how it works — glass step cards over warm atmosphere */
+  .howsec.band{background:radial-gradient(120% 85% at 50% 0%, #f8eedb 0%, #f2e7d1 62%, #ece1cc 100%);}
+  .stepflow{margin-top:48px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:stretch;}
+  @media(max-width:880px){.stepflow{grid-template-columns:1fr 1fr;gap:14px;}}
+  @media(max-width:520px){.stepflow{grid-template-columns:1fr;}}
+  .gstep{position:relative;background:rgba(255,255,255,.55);backdrop-filter:blur(11px);-webkit-backdrop-filter:blur(11px);border:1px solid rgba(255,255,255,.7);border-radius:18px;box-shadow:0 18px 42px -24px rgba(60,42,26,.42);padding:30px 22px 28px;text-align:center;transition:transform .3s var(--ease-out), box-shadow .3s;}
+  @media(hover:hover){.gstep:hover{transform:translateY(-5px);box-shadow:0 28px 56px -22px rgba(60,42,26,.5);}}
+  .gstep .gnum{font-family:var(--serif);font-size:14px;letter-spacing:.12em;color:var(--gold);}
+  .gstep .gicon{width:48px;height:48px;margin:16px auto 4px;display:block;}
+  .gstep img.gicon{mix-blend-mode:multiply;object-fit:contain;}
+  .gstep .gsvg{color:var(--gold);}
+  .gstep h3{margin:16px 0 0;font-size:18px;font-weight:600;line-height:1.22;}
+  .gstep .grule{width:26px;height:1px;background:var(--gold-soft);margin:12px auto;}
+  .gstep p{margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5;}
+  @media(min-width:881px){.gstep:not(:last-child)::after{content:"\2192";position:absolute;right:-12px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:15px;z-index:2;}}
 
   .formats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px;}
   @media(max-width:880px){.formats{grid-template-columns:1fr;}}
@@ -358,24 +367,19 @@
   </section>
 
   <!-- HOW -->
-  <section id="how" class="band glow left">
+  <section id="how" class="band glow left howsec">
     <div class="wrap">
       <span class="label reveal">How it works</span>
       <h2 class="reveal mt16" style="transition-delay:60ms;">Scent at the moment of decision.</h2>
-      <p class="lede reveal mt16" style="transition-delay:100ms;">We match the right scent to your product — you smell and approve it first — deliver it where people decide, and measure what it does. Starting with a free pilot.</p>
-      <div class="scenttrio reveal">
-        <figure><img src="bread.jpg" alt="Fresh sourdough bread" loading="lazy" decoding="async"><figcaption>Fresh bread</figcaption></figure>
-        <figure><img src="bubble_tea.jpg" alt="Brown sugar bubble tea with pearls" loading="lazy" decoding="async"><figcaption>Brown-sugar milk tea</figcaption></figure>
-        <figure><img src="ice_cream.jpg" alt="Vanilla bean ice cream with butterscotch sauce" loading="lazy" decoding="async"><figcaption>Vanilla &amp; butterscotch</figcaption></figure>
+      <p class="lede reveal mt16" style="transition-delay:100ms;">A sensory journey, from the scent we match to the lift you can measure. We handle every step. You start with a free pilot.</p>
+      <div class="stepflow">
+        <div class="gstep reveal"><div class="gnum">01</div><img class="gicon" src="icon_match.png" alt="" aria-hidden="true" loading="lazy"><h3>We match your scent</h3><div class="grule"></div><p>Tuned to your hero product and sampled for you to approve first. Real, never synthetic.</p></div>
+        <div class="gstep reveal" style="transition-delay:70ms;"><div class="gnum">02</div><img class="gicon" src="icon_deliver.png" alt="" aria-hidden="true" loading="lazy"><h3>We deliver it, your way</h3><div class="grule"></div><p>An invisible diffuser, a beautiful object, or your packaging, placed where people decide.</p></div>
+        <div class="gstep reveal" style="transition-delay:140ms;"><div class="gnum">03</div><svg class="gicon gsvg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" aria-hidden="true"><circle cx="24" cy="24" r="3"/><path d="M16 16a11 11 0 000 16M32 16a11 11 0 010 16M11 11a18 18 0 000 26M37 11a18 18 0 010 26"/></svg><h3>It does its quiet work</h3><div class="grule"></div><p>Noticeable but never overwhelming, it triggers craving and brands the moment.</p></div>
+        <div class="gstep reveal" style="transition-delay:210ms;"><div class="gnum">04</div><img class="gicon" src="icon_measure.png" alt="" aria-hidden="true" loading="lazy"><h3>We measure together</h3><div class="grule"></div><p>We compare your takings on scented days against normal days. Real numbers, then you decide.</p></div>
       </div>
-      <div class="steps">
-        <div class="stepr crd reveal"><div class="stepn"><svg class="stepicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 20c-1.3-1.6 0-3 0-4.6S5.7 13 7 11.4 8.3 8.8 7 7.2 5.7 4.6 7 3"/><path d="M12 20c-1.3-1.6 0-3 0-4.6S10.7 13 12 11.4 13.3 8.8 12 7.2 10.7 4.6 12 3"/><path d="M17 20c-1.3-1.6 0-3 0-4.6S15.7 13 17 11.4 18.3 8.8 17 7.2 15.7 4.6 17 3"/></svg><span class="stepnum">01</span></div><div><h3>We match your scent</h3><p>Tuned to your hero product and sampled for you to approve first. Real, never synthetic.</p></div></div>
-        <div class="stepr crd reveal"><div class="stepn"><svg class="stepicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg><span class="stepnum">02</span></div><div><h3>We deliver it, your way</h3><p>An invisible diffuser, a beautiful object, or your packaging, placed right where people decide. We set it up; you do nothing.</p></div></div>
-        <div class="stepr crd reveal"><div class="stepn"><svg class="stepicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="1.8"/><path d="M8.5 8.5a5 5 0 000 7M15.5 8.5a5 5 0 010 7M5.8 5.8a9 9 0 000 12.4M18.2 5.8a9 9 0 010 12.4"/></svg><span class="stepnum">03</span></div><div><h3>It does its quiet work</h3><p>Noticeable but never overwhelming, it triggers craving and brands the moment. We keep it fresh.</p></div></div>
-        <div class="stepr crd reveal"><div class="stepn"><svg class="stepicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20v-8M11 20V5M17 20v-6"/><path d="M3 20h18"/></svg><span class="stepnum">04</span></div><div><h3>We measure together</h3><p>We compare your takings on scented days against normal days. Real numbers, then you decide.</p></div></div>
-      </div>
-      <p class="micro mt24 reveal" style="font-style:italic;">Industry studies report in-store scent lifting sales by roughly 10% and increasing dwell time.</p>
-      <div class="mt40 reveal"><a class="btn solid" data-modal href="#apply">Claim a founding pilot <span class="arr">→</span></a></div>
+      <p class="micro mt40 reveal" style="font-style:italic;text-align:center;">Industry studies report in-store scent lifting sales by roughly 10% and increasing dwell time.</p>
+      <div class="mt24 reveal" style="text-align:center;"><a class="btn solid" data-modal href="#apply"><span>Claim a founding pilot</span> <span class="arr">→</span></a></div>
     </div>
   </section>
 
