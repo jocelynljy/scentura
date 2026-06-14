@@ -608,7 +608,7 @@
           <option>Dessert &amp; ice cream</option><option>Restaurant</option><option>Retail / shop</option><option>Other</option>
         </select>
       </div>
-      <div class="field"><label>Your brand online <span class="opt">(website or Instagram)</span></label><input type="text" name="Website" placeholder="yourbrand.com" autocomplete="off"><input type="text" name="Brand Instagram" placeholder="@yourbrand" autocomplete="off" style="margin-top:8px;"></div>
+      <div class="field"><label>Your brand online</label><input type="text" name="Brand online" placeholder="Website, Instagram, TikTok — anything we can find you by" autocomplete="off"></div>
       <div class="field"><label>How should we reach you?</label>
         <div class="cmethods">
           <button type="button" class="cm" data-cm="Instagram">Instagram</button>
@@ -705,7 +705,7 @@
     function val(n){ var el=form.querySelector('[name="'+n+'"]'); return el?el.value.trim():''; }
     form.addEventListener('submit',function(e){
       e.preventDefault();
-      if(!val('Website') && !val('Brand Instagram')){ status.textContent='Please add your website or Instagram.'; return; }
+      if(!val('Brand online')){ status.textContent='Please add a link or handle so we can find you.'; return; }
       var hasMethod=[].slice.call(form.querySelectorAll('.cmf')).some(function(i){return !i.disabled && i.value.trim();});
       if(!hasMethod){ status.textContent='Please pick at least one way to reach you and fill it in.'; return; }
       status.textContent='Sending…';
