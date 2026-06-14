@@ -5,22 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Scentura — Sensory Branding for F&B Brands</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap');
   :root{
-    --ink:#1B1714; --cream:#F5EFE4; --paper:#FBF8F1; --soft:#5B5044;
-    --gold:#A9803A; --gold-deep:#866223; --gold-soft:#C6A05A; --line:#E4DACA; --line-dk:#CFC2AC;
-    --serif:'Fraunces', Georgia, serif; --sans:'Hanken Grotesk', -apple-system, sans-serif;
+    --ink:#211B16; --cream:#F4EEE2; --paper:#FBF6EC; --soft:#5E5346;
+    --gold:#B0654F; --gold-deep:#985240; --gold-soft:#CFA292; --line:#E7DBC9; --line-dk:#D5C6AF;
+    --serif:'Playfair Display', Georgia, serif; --sans:'Hanken Grotesk', -apple-system, sans-serif;
     --ease-out:cubic-bezier(0.23,1,0.32,1);
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+  body{margin:0;background:radial-gradient(115% 55% at 84% -8%, rgba(176,101,79,.12), rgba(176,101,79,0) 56%) no-repeat, linear-gradient(90deg, rgba(120,88,60,.035) 1px, transparent 1px) 0 0/152px 100%, var(--cream);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;}
   body.locked{overflow:hidden;}
   .wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
   @media(max-width:600px){.wrap{padding:0 22px;}}
 
-  .label{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;}
-  h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;line-height:1.1;}
+  .label{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#8C7E6B;font-weight:600;}
+  h1,h2,h3{font-family:var(--serif);font-weight:500;margin:0;line-height:1.14;}
+  .acc{font-style:italic;font-weight:500;color:var(--gold);}
   h1{font-size:clamp(32px,5.2vw,54px);letter-spacing:-.015em;}
   h2{font-size:clamp(24px,3.4vw,36px);}
   h3{font-size:20px;font-weight:500;font-family:var(--serif);}
@@ -195,7 +196,7 @@
 
 <header class="nav">
   <div class="wrap nav-in">
-    <a class="brand" href="#home">Scentura</a>
+    <a class="brand" href="#home">Scentura<span style="color:var(--gold);">.</span></a>
     <button class="navtoggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav id="nav"><ul>
       <li><a href="#how">How It Works</a></li>
@@ -224,7 +225,7 @@
       </svg>
       <div class="hero-content">
         <span class="label">Sensory branding for F&amp;B</span>
-        <h1>Make your shop<br>impossible to walk past.</h1>
+        <h1>Make your shop<br><em class="acc">impossible</em> to walk past.</h1>
         <p class="lede" style="margin-left:auto;margin-right:auto;">You've felt it — walking past a bakery, not even hungry, until warm butter hits the air and you're in the queue before you've decided. That pull is scent, doing the selling. Your cold drinks and desserts are <span class="serif-i">silent</span> — and the brands taking your customers are learning to smell unforgettable. Scentura gives your shop a scent of its own. Try it free.</p>
         <div class="cta">
           <a class="btn solid" data-modal href="#apply">Claim a founding pilot</a>
@@ -239,7 +240,7 @@
   <section class="band">
     <div class="wrap center">
       <span class="label reveal">Why it works</span>
-      <h2 class="reveal mt16" style="transition-delay:60ms;">Smell hits the brain<br>before thought does.</h2>
+      <h2 class="reveal mt16" style="transition-delay:60ms;">Smell hits the <em class="acc">brain</em><br>before thought does.</h2>
       <div class="muted-rule reveal" style="transition-delay:100ms;"></div>
       <p class="lede reveal" style="margin:0 auto;transition-delay:120ms;">It's the one sense wired straight to memory and emotion — no filter, no off switch. The right scent at your counter makes the decision half-made before they've read a word. Three things happen at once.</p>
       <div class="triad mt56" style="text-align:left;">
@@ -271,7 +272,7 @@
   <section id="formats" class="band">
     <div class="wrap">
       <span class="label reveal">How we release it</span>
-      <h2 class="reveal mt16" style="transition-delay:60ms;">One scent, released<br>the way that fits.</h2>
+      <h2 class="reveal mt16" style="transition-delay:60ms;">One scent, released<br>the way that <em class="acc">fits</em>.</h2>
       <p class="lede reveal mt16" style="transition-delay:100ms;">The scent is the value — these are the ways we put it into your space, matched to your size, look and budget. Most F&amp;B starts with the diffuser.</p>
       <div class="formats">
         <div class="fcard reveal"><span class="label">Powered · strongest</span><h3>Cold-air diffuser</h3><p>No heat, no device on show. Even, whole-space coverage — the workhorse for busy or larger spaces, and where most F&amp;B starts.</p></div>
@@ -285,7 +286,7 @@
   <section id="why" class="band dark">
     <div class="wrap">
       <span class="label reveal">Why scent</span>
-      <h2 class="reveal mt16" style="transition-delay:60ms;">The brands winning on scent<br>are already in your category.</h2>
+      <h2 class="reveal mt16" style="transition-delay:60ms;">The brands winning on scent<br>are <em class="acc">already</em> in your category.</h2>
       <p class="lede reveal mt16" style="transition-delay:100ms;">This isn't a gimmick — it's a measured effect, and the move the fastest-growing F&amp;B brands in the world are making right now.</p>
       <div class="statgrid reveal">
         <div><div class="num">+20%</div><div class="cap">more spent by shoppers in a scented store — study published in the <span class="serif-i">Journal of Retailing</span></div></div>
@@ -378,7 +379,7 @@
 
 <footer class="foot">
   <div class="wrap">
-    <div class="brand">Scentura</div>
+    <div class="brand">Scentura<span style="color:var(--gold);">.</span></div>
     <div>Sensory branding for F&amp;B · Singapore</div>
     <div class="mt8"><a href="https://t.me/jocelynnnjy" style="color:var(--gold-deep);text-decoration:none;">Telegram</a> · <a href="https://www.linkedin.com/in/jocelynlimjinyan/" style="color:var(--gold-deep);text-decoration:none;">LinkedIn</a> · <a href="mailto:limjy.jocelyn@gmail.com" style="color:var(--gold-deep);text-decoration:none;">limjy.jocelyn@gmail.com</a></div>
     <div class="disclaimer mt8">Brand examples are illustrative of scent branding in practice and are not affiliated with Scentura.</div>
