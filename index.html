@@ -272,6 +272,19 @@
   .scenttrio img{display:block;width:100%;height:clamp(150px,20vw,200px);object-fit:cover;border-radius:12px;}
   .scenttrio figcaption{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--ink-soft);margin-top:9px;}
   @media(max-width:560px){.scenttrio{gap:10px;}.scenttrio figcaption{font-size:13px;}}
+
+  /* scent library */
+  .scentlib{margin-top:44px;display:grid;gap:18px;}
+  .famcard{padding:28px 30px;}
+  .famcard .label{display:block;margin-bottom:14px;}
+  .scents{display:flex;flex-wrap:wrap;gap:9px;}
+  .scent{display:inline-block;border:1px solid var(--card-br);background:rgba(255,255,255,.45);padding:7px 13px;font-size:13.5px;color:var(--ink-soft);font-weight:500;transition:border-color .2s,color .2s;}
+  @media(hover:hover){.scent:hover{border-color:var(--gold);color:var(--gold-deep);}}
+  .famcard.feature{background:linear-gradient(180deg,#fbeede,#f5e3cb);border:1px solid var(--gold-soft);border-top:3px solid var(--gold);}
+  .famcard.feature .scent{border-color:var(--gold-soft);background:rgba(255,255,255,.6);color:var(--gold-deep);}
+  .famgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  @media(max-width:880px){.famgrid{grid-template-columns:1fr;}}
+  .famcard.custom{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
   .whyimg{display:block;width:100%;height:clamp(220px,32vh,360px);object-fit:cover;border-radius:14px;}
 
   @media (prefers-reduced-motion: reduce){
@@ -294,6 +307,7 @@
     <button class="navtoggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav id="nav"><ul>
       <li><a href="#how">How It Works</a></li>
+      <li><a href="#scents">Scents</a></li>
       <li><a href="#formats">What We Make</a></li>
       <li><a href="#why">Why Scent</a></li>
       <li><a href="#pricing">Pricing</a></li>
@@ -356,6 +370,33 @@
       </div>
       <p class="micro mt24 reveal" style="font-style:italic;">Industry studies report in-store scent lifting sales by roughly 10% and increasing dwell time.</p>
       <div class="mt40 reveal"><a class="btn solid" data-modal href="#apply">Claim a founding pilot <span class="arr">→</span></a></div>
+    </div>
+  </section>
+
+  <!-- SCENT LIBRARY -->
+  <section id="scents" class="band glow left">
+    <div class="wrap">
+      <span class="label reveal">The scent library</span>
+      <h2 class="reveal mt16" style="transition-delay:60ms;">What could yours<br>smell like?</h2>
+      <p class="lede reveal mt16" style="transition-delay:100ms;">We build from a library of true-to-food scents, then tune one signature to your brand. Cold-drink shops usually begin with the first row.</p>
+      <div class="scentlib">
+        <div class="famcard crd feature reveal">
+          <span class="ptag">Most start here</span>
+          <span class="label">Signature Cold-Drink</span>
+          <div class="scents">
+            <span class="scent">Brown Sugar Milk Tea</span><span class="scent">Roasted Coffee</span><span class="scent">Vanilla Ice Cream</span><span class="scent">Matcha</span>
+          </div>
+        </div>
+        <div class="famgrid">
+          <div class="famcard crd reveal"><span class="label">Fruity &amp; Fresh</span><div class="scents"><span class="scent">Honey Peach</span><span class="scent">Lychee</span><span class="scent">Green Apple</span><span class="scent">Grapefruit</span><span class="scent">Watermelon</span></div></div>
+          <div class="famcard crd reveal" style="transition-delay:80ms;"><span class="label">Tea &amp; Floral</span><div class="scents"><span class="scent">Roasted Tea (Hojicha)</span><span class="scent">Green Tea</span><span class="scent">Osmanthus</span><span class="scent">Jasmine</span><span class="scent">White Tea</span></div></div>
+          <div class="famcard crd reveal" style="transition-delay:160ms;"><span class="label">Warm &amp; Sweet</span><div class="scents"><span class="scent">Honey</span><span class="scent">Chocolate</span><span class="scent">Coconut Milk</span><span class="scent">Caramel</span></div></div>
+        </div>
+        <div class="famcard crd custom reveal">
+          <div><span class="label">Custom</span><p class="mt8" style="margin-bottom:0;">Don't see your signature scent? We'll develop it with you.</p></div>
+          <a class="btn ghost" data-modal href="#apply">Ask for yours</a>
+        </div>
+      </div>
     </div>
   </section>
 
