@@ -6,7 +6,7 @@
 <title>Scentura — Sensory Branding for F&B Brands</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&display=swap" rel="stylesheet">
 <style>
   :root{
     --paper:#f6f0e6; --paper-2:#efe7d8; --card:#fffdf8;
@@ -17,6 +17,7 @@
     --shadow:0 1px 2px rgba(60,45,30,.05), 0 6px 18px rgba(60,45,30,.06);
     --shadow-lg:0 24px 60px rgba(60,45,30,.13);
     --radius:20px;
+    --brand:'Cormorant Garamond', Georgia, serif;
     --serif:'Fraunces', Georgia, serif;
     --sans:'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     --mono:'Space Mono', ui-monospace, monospace;
@@ -54,7 +55,7 @@
   /* nav */
   header.nav{position:sticky;top:0;z-index:50;background:rgba(246,240,230,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
   .nav-in{position:relative;display:flex;align-items:center;justify-content:space-between;height:74px;}
-  .brand{font-family:var(--serif);font-weight:600;font-size:26px;letter-spacing:-.01em;text-decoration:none;color:var(--ink);}
+  .brand{font-family:var(--brand);font-weight:600;font-size:30px;letter-spacing:.015em;text-decoration:none;color:var(--ink);}
   nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;align-items:center;}
   nav a{position:relative;font-size:14px;letter-spacing:.01em;color:var(--ink-soft);text-decoration:none;padding:6px 0;transition:color .2s;font-weight:500;cursor:pointer;}
   nav a:not(.navcta)::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .28s var(--ease-out);border-radius:2px;}
@@ -198,7 +199,7 @@
   .contact-box h2{color:var(--paper);} .contact-box p{color:#d8cdb8;}
 
   footer.foot{padding:46px 0;text-align:center;color:var(--ink-soft);font-size:13.5px;}
-  footer.foot .brand{font-size:20px;display:inline-block;margin-bottom:10px;}
+  footer.foot .brand{font-size:23px;display:inline-block;margin-bottom:10px;}
   .disclaimer{font-size:11.5px;color:var(--faint);font-style:italic;}
 
   /* modal */
