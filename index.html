@@ -21,12 +21,12 @@
 
   .label{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;}
   h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;line-height:1.1;}
-  h1{font-size:clamp(40px,7vw,84px);letter-spacing:-.015em;}
-  h2{font-size:clamp(28px,4.2vw,44px);}
-  h3{font-size:21px;font-weight:500;font-family:var(--serif);}
+  h1{font-size:clamp(32px,5.2vw,54px);letter-spacing:-.015em;}
+  h2{font-size:clamp(24px,3.4vw,36px);}
+  h3{font-size:20px;font-weight:500;font-family:var(--serif);}
   p{color:var(--soft);margin:0 0 16px;}
   .serif-i{font-family:var(--serif);font-style:italic;}
-  .lede{font-size:19.5px;color:var(--ink);max-width:62ch;line-height:1.6;}
+  .lede{font-size:17.5px;color:var(--ink);max-width:60ch;line-height:1.58;}
   .mt8{margin-top:8px;}.mt16{margin-top:16px;}.mt24{margin-top:24px;}.mt40{margin-top:40px;}.mt56{margin-top:56px;}
   .muted-rule{height:1px;background:var(--line-dk);width:84px;margin:22px 0;}
   .center{text-align:center;}.center .muted-rule{margin-left:auto;margin-right:auto;}
@@ -63,8 +63,8 @@
     nav a.navcta{border:0;border-bottom:1px solid var(--line);border-radius:0;padding:14px 32px;}
   }
 
-  section{scroll-margin-top:90px;}
-  .band{padding:88px 0;border-bottom:1px solid var(--line);}
+  section{scroll-margin-top:80px;}
+  .band{padding:58px 0;border-bottom:1px solid var(--line);}
   .band.dark{background:var(--ink);color:#D9CEBC;border-bottom:0;}
   .band.dark h2{color:var(--cream);} .band.dark .label{color:var(--gold-soft);}
   .band.dark .lede{color:#E7DDCB;} .band.dark p{color:#C3B8A6;}
@@ -76,14 +76,14 @@
   .btn:active{transform:scale(.97);}
 
   /* hero */
-  .hero{padding:104px 0 80px;text-align:center;}
+  .hero{padding:48px 0 52px;text-align:center;}
   .hero-stage{position:relative;}
-  .hero-motif{position:absolute;top:50%;left:50%;transform:translate(-50%,-58%);width:min(520px,82%);color:var(--gold);opacity:.16;z-index:0;pointer-events:none;}
+  .hero-motif{position:absolute;top:50%;left:50%;transform:translate(-50%,-56%);width:min(320px,60%);color:var(--gold);opacity:.13;z-index:0;pointer-events:none;}
   .hero-content{position:relative;z-index:1;}
-  .hero h1{max-width:14ch;margin:18px auto 0;}
-  .hero .lede{margin:26px auto 0;}
-  .hero .cta{margin-top:36px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-  .reassure{margin-top:18px;font-size:13px;letter-spacing:.04em;color:var(--soft);text-transform:uppercase;}
+  .hero h1{max-width:16ch;margin:16px auto 0;}
+  .hero .lede{margin:22px auto 0;}
+  .hero .cta{margin-top:30px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .reassure{margin-top:16px;font-size:12.5px;letter-spacing:.04em;color:var(--soft);text-transform:uppercase;}
   .reassure b{color:var(--gold-deep);font-weight:700;}
 
   /* proof strip */
@@ -223,14 +223,14 @@
         </g>
       </svg>
       <div class="hero-content">
-        <span class="label reveal">Sensory branding for F&amp;B</span>
-        <h1 class="reveal" style="transition-delay:70ms;">Make your shop<br>impossible to walk past.</h1>
-        <p class="lede reveal" style="transition-delay:140ms;margin-left:auto;margin-right:auto;">You've felt it — walking past a bakery, not even hungry, until warm butter hits the air and you're in the queue before you've decided. That pull is scent, doing the selling. Your cold drinks and desserts are <span class="serif-i">silent</span> — and the brands taking your customers are learning to smell unforgettable. Scentura gives your shop a scent of its own. Try it free.</p>
-        <div class="cta reveal" style="transition-delay:210ms;">
+        <span class="label">Sensory branding for F&amp;B</span>
+        <h1>Make your shop<br>impossible to walk past.</h1>
+        <p class="lede" style="margin-left:auto;margin-right:auto;">You've felt it — walking past a bakery, not even hungry, until warm butter hits the air and you're in the queue before you've decided. That pull is scent, doing the selling. Your cold drinks and desserts are <span class="serif-i">silent</span> — and the brands taking your customers are learning to smell unforgettable. Scentura gives your shop a scent of its own. Try it free.</p>
+        <div class="cta">
           <a class="btn solid" data-modal href="#apply">Claim a founding pilot</a>
           <a class="btn ghost" href="#how">See how it works</a>
         </div>
-        <p class="reassure reveal" style="transition-delay:260ms;">Free for two weeks · <b>No machine</b> · No lock-in</p>
+        <p class="reassure">Free for two weeks · <b>No machine</b> · No lock-in</p>
       </div>
     </div>
   </section>
@@ -447,10 +447,13 @@
   // reveal
   (function(){
     var rev=document.querySelectorAll('.reveal');
+    function showAll(){ rev.forEach(function(el){el.classList.add('in');}); }
     if('IntersectionObserver' in window){
-      var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -7% 0px'});
+      var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});},{threshold:.08,rootMargin:'0px 0px -5% 0px'});
       rev.forEach(function(el){ro.observe(el);});
-    } else { rev.forEach(function(el){el.classList.add('in');}); }
+      // safety net: never leave content hidden
+      setTimeout(showAll, 1600);
+    } else { showAll(); }
   })();
 
   // modal
