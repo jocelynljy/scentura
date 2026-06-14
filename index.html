@@ -231,10 +231,17 @@
 
   .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;margin-top:44px;align-items:start;}
   @media(max-width:880px){.about-grid{grid-template-columns:1fr;gap:26px;}}
-  .factcard{padding:30px;}
-  .factcard ul{list-style:none;padding:0;margin:14px 0 0;}
-  .factcard li{padding:13px 0;border-top:1px solid var(--line);color:var(--ink-soft);font-size:14.5px;line-height:1.5;}
-  .factcard li:first-child{border-top:0;}.factcard li strong{color:var(--ink);font-weight:600;}
+  /* about — immersive brand story */
+  .aboutsec.band{background:radial-gradient(115% 80% at 100% 0%, #f8eeda 0%, transparent 58%), radial-gradient(90% 70% at 0% 100%, rgba(184,128,74,.06), transparent 60%);}
+  .briefcard{position:relative;background:rgba(255,255,255,.42);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.62);border-radius:22px;box-shadow:0 22px 52px -26px rgba(60,42,26,.42);padding:32px 30px;}
+  .briefcard > .label{display:block;margin-bottom:20px;}
+  .brieflist{list-style:none;padding:0;margin:0;display:grid;gap:18px;}
+  .brieflist li{display:flex;gap:14px;align-items:flex-start;}
+  .bicon{width:42px;height:42px;flex:none;mix-blend-mode:multiply;object-fit:contain;margin-top:-2px;}
+  .brieflist strong{display:block;color:var(--ink);font-weight:600;font-size:15.5px;line-height:1.2;}
+  .brieflist span{display:block;color:var(--ink-soft);font-size:13.5px;margin-top:3px;line-height:1.45;}
+  .briefstart{margin-top:22px;padding-top:18px;border-top:1px solid rgba(120,90,60,.16);font-size:14.5px;color:var(--ink);}
+  .briefstart b{color:var(--gold-deep);font-family:var(--sans);font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;margin-right:9px;}
 
   .contact-box{position:relative;background:linear-gradient(168deg,#2c2420,#211b16 75%);color:var(--paper);border-radius:0;padding:72px 44px;text-align:center;box-shadow:var(--shadow-lg);overflow:hidden;}
   .contact-box::before{content:"";position:absolute;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle, rgba(221,154,137,.18), transparent 70%);top:-180px;left:50%;transform:translateX(-50%);pointer-events:none;}
@@ -511,24 +518,24 @@
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="band glow left">
+  <section id="about" class="band glow left aboutsec">
     <div class="wrap">
       <span class="label reveal">About</span>
       <h2 class="reveal mt16" style="transition-delay:60ms;">Bringing the scent playbook<br>of great brands to everyone else.</h2>
       <div class="about-grid">
         <div class="reveal">
-          <p class="lede">The most memorable brands have always understood that a space should be <span class="serif-i">felt</span>, not just seen. Scentura makes that within reach for F&amp;B and retail — giving each brand its own scent, delivered the way that fits, and proven before you pay.</p>
-          <p>We lead with scent because it's the fastest thing to feel. But what we really build is your brand's sensory identity: the smell people carry home, recognise on the street, and come back for.</p>
+          <p class="lede">The most memorable brands have always understood that a space should be <span class="serif-i">felt</span>, not just seen. Scentura makes that within reach for F&amp;B and retail, giving each brand its own scent, delivered the way that fits, and proven before you pay.</p>
+          <p>We lead with scent because it's the fastest thing to feel. But what we really build is your brand's <span class="serif-i">sensory identity</span>: the smell people carry home, recognise on the street, and come back for.</p>
           <p>Scentura was born out of NUS Enterprise, where it was named 1st Runner-Up. The idea was simple. Hot food has always sold itself by smell, but no one was doing it for cold drinks and desserts. So we built it, for the shops the big scent houses overlook. Every brand deserves to be remembered, not just seen.</p>
         </div>
-        <div class="factcard crd reveal" style="transition-delay:90ms;">
+        <div class="briefcard reveal" style="transition-delay:90ms;">
           <span class="label">In brief</span>
-          <ul>
-            <li><strong>What</strong><br>Sensory branding — signature scent for F&amp;B</li>
-            <li><strong>Recognition</strong><br>1st Runner-Up, NUS Enterprise — with an NUS feature on the way</li>
-            <li><strong>Where</strong><br>Singapore</li>
-            <li><strong>Start</strong><br>A free two-week pilot</li>
+          <ul class="brieflist">
+            <li><img class="bicon" src="about_origin.png" alt="" aria-hidden="true" loading="lazy"><div><strong>Born out of NUS Enterprise</strong><span>Built on research, not guesswork.</span></div></li>
+            <li><img class="bicon" src="about_recognition.png" alt="" aria-hidden="true" loading="lazy"><div><strong>1st Runner-Up</strong><span>NUS Enterprise, with an NUS feature on the way.</span></div></li>
+            <li><img class="bicon" src="about_location.png" alt="" aria-hidden="true" loading="lazy"><div><strong>Based in Singapore</strong><span>Serving local and regional F&amp;B.</span></div></li>
           </ul>
+          <div class="briefstart"><b>Start</b>A free two-week pilot, fully managed.</div>
         </div>
       </div>
     </div>
