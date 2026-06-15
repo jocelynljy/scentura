@@ -33,31 +33,56 @@
 }
 </script>
 <style>
-:root{--paper:#f6f0e6;--card:#fffdf8;--ink:#2c2420;--ink-soft:#6f655c;--faint:#9a9085;--line:#e2d8c6;--gold:#c4644f;--gold-deep:#a84e3b;}
+:root{--paper:#f6f0e6;--paper-2:#efe7d8;--card:#fffdf8;--ink:#2c2420;--ink-soft:#6f655c;--faint:#9a9085;--line:#e2d8c6;--line-dk:#d6cab4;--gold:#c4644f;--gold-deep:#a84e3b;--gold-soft:#dd9a89;--brand:'Cormorant Garamond',Georgia,serif;--ease:cubic-bezier(.22,.61,.36,1);}
 *{box-sizing:border-box;}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;line-height:1.7;font-size:17px;-webkit-font-smoothing:antialiased;}
 a{color:var(--gold-deep);}
-.wrap{max-width:760px;margin:0 auto;padding:0 22px;}
-header.site{border-bottom:1px solid var(--line);padding:18px 0;}
-header.site .wrap{display:flex;justify-content:space-between;align-items:center;}
-.word{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:25px;letter-spacing:.5px;text-decoration:none;color:var(--ink);}
-.word span{color:var(--gold);}
-.nav a{text-decoration:none;color:var(--ink-soft);font-size:14px;font-weight:600;}
-.lead{margin:34px 0 6px;}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px;}
+.nav{position:sticky;top:0;z-index:50;background:rgba(246,240,230,.86);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:74px;max-width:1140px;margin:0 auto;padding:0 28px;}
+.brand{font-family:var(--brand);font-weight:600;font-size:29px;letter-spacing:.015em;text-decoration:none;color:var(--ink);}
+.brand span{color:var(--gold);}
+.nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0;align-items:center;}
+.nav ul a{position:relative;font-size:14px;color:var(--ink-soft);text-decoration:none;font-weight:500;padding:6px 0;transition:color .2s;}
+@media(hover:hover){.nav ul a:not(.navcta):hover{color:var(--ink);}}
+.nav ul a.active{color:var(--ink);font-weight:600;}
+.nav ul a.active::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--gold);}
+.navcta{background:var(--ink);color:#fff !important;padding:10px 20px;font-weight:600;transition:background .25s, transform .2s var(--ease);}
+@media(hover:hover){.navcta:hover{background:var(--gold);transform:translateY(-2px);}}
+@media(max-width:900px){.nlink{display:none;}.nav-in{height:64px;padding:0 20px;}.brand{font-size:26px;}}
+.lead{margin:42px 0 10px;}
 .eyebrow{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;}
-h1{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(30px,5vw,42px);line-height:1.1;letter-spacing:-.5px;margin:.2em 0 .3em;}
-.sub{color:var(--ink-soft);font-size:18px;margin:0 0 10px;}
-.post{display:block;border:1px solid var(--line);background:var(--card);border-radius:16px;padding:22px 24px;margin:18px 0;text-decoration:none;color:inherit;transition:transform .15s ease, box-shadow .15s ease;}
-.post:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(60,45,30,.10);}
-.post h2{font-family:'Fraunces',serif;font-weight:600;font-size:23px;margin:0 0 6px;color:var(--ink);}
-.post p{margin:0;color:var(--ink-soft);font-size:15.5px;}
-.post .more{display:inline-block;margin-top:10px;color:var(--gold-deep);font-weight:700;font-size:14px;}
-footer.site{border-top:1px solid var(--line);margin-top:34px;padding:26px 0;color:var(--faint);font-size:13px;}
-footer.site a{color:var(--gold-deep);text-decoration:none;}
+h1{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(32px,5.2vw,46px);line-height:1.08;letter-spacing:-.6px;margin:.18em 0 .3em;}
+.sub{color:var(--ink-soft);font-size:19px;margin:0 0 8px;max-width:620px;}
+.posts{margin:30px 0 10px;}
+.post{display:flex;gap:22px;align-items:stretch;background:var(--card);border:1px solid var(--line);padding:16px;margin:18px 0;text-decoration:none;color:inherit;transition:transform .18s var(--ease), box-shadow .18s var(--ease), border-color .18s;}
+@media(hover:hover){.post:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(60,45,30,.12);border-color:var(--line-dk);}}
+.post .thumb{flex:0 0 200px;aspect-ratio:4/3;object-fit:cover;border-radius:12px;}
+.post .body{padding:8px 8px 8px 0;display:flex;flex-direction:column;justify-content:center;}
+.post h2{font-family:'Fraunces',serif;font-weight:600;font-size:23px;line-height:1.2;margin:0 0 8px;color:var(--ink);letter-spacing:-.3px;}
+.post p{margin:0 0 12px;color:var(--ink-soft);font-size:15.5px;line-height:1.55;}
+.post .more{color:var(--gold-deep);font-weight:700;font-size:14px;}
+.post:hover .more{text-decoration:underline;}
+@media(max-width:640px){.post{flex-direction:column;gap:14px;}.post .thumb{flex:none;width:100%;aspect-ratio:16/9;}.post .body{padding:0 6px 6px;}}
+.foot{border-top:1px solid var(--line);margin-top:40px;padding:30px 0;color:var(--faint);font-size:13px;text-align:center;}
+.foot a{color:var(--gold-deep);text-decoration:none;}
 </style>
 </head>
 <body>
-<header class="site"><div class="wrap"><a class="word" href="/">Scentura<span>.</span></a><div class="nav"><a href="/#apply">Claim a pilot →</a></div></div></header>
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="/">Scentura<span>.</span></a>
+    <nav><ul>
+      <li class="nlink"><a href="/#how">How It Works</a></li>
+      <li class="nlink"><a href="/#scents">Scents</a></li>
+      <li class="nlink"><a href="/#formats">What We Make</a></li>
+      <li class="nlink"><a href="/#why">Why Scent</a></li>
+      <li class="nlink"><a href="/#pricing">Pricing</a></li>
+      <li class="nlink"><a class="active" href="/blog">Guides</a></li>
+      <li><a class="navcta" href="/#apply">Free pilot</a></li>
+    </ul></nav>
+  </div>
+</header>
 <main class="wrap">
 <div class="lead">
 <div class="eyebrow">Guides</div>
@@ -65,24 +90,35 @@ footer.site a{color:var(--gold-deep);text-decoration:none;}
 <p class="sub">Practical guides for café, bubble tea and dessert owners in Singapore — how scent branding works, what it costs, and the evidence behind it.</p>
 </div>
 
+<div class="posts">
 <a class="post" href="/blog/scent-marketing-singapore">
-<h2>Scent Marketing in Singapore: The Complete Guide for F&amp;B</h2>
-<p>What scent marketing is, why it works, the evidence, what it costs, and how to use it for your brand.</p>
-<span class="more">Read the guide →</span>
+  <img class="thumb" src="/why_ambient.jpg" alt="A warm café interior at golden hour with a diffuser on the counter" loading="lazy" decoding="async">
+  <div class="body">
+    <h2>Scent Marketing in Singapore: The Complete Guide for F&amp;B</h2>
+    <p>What scent marketing is, why it works, the evidence, what it costs, and how to use it for your brand.</p>
+    <span class="more">Read the guide →</span>
+  </div>
 </a>
 
 <a class="post" href="/blog/scent-for-bubble-tea-singapore">
-<h2>Scent Marketing for Bubble Tea Shops in Singapore</h2>
-<p>Cold drinks give off almost no smell. Here's how a signature scent fills that gap and lifts sales.</p>
-<span class="more">Read the guide →</span>
+  <img class="thumb" src="/brownsugar.jpg" alt="Brown sugar syrup swirling into milk tea" loading="lazy" decoding="async">
+  <div class="body">
+    <h2>Scent Marketing for Bubble Tea Shops in Singapore</h2>
+    <p>Cold drinks give off almost no smell. Here's how a signature scent fills that gap and lifts sales.</p>
+    <span class="more">Read the guide →</span>
+  </div>
 </a>
 
 <a class="post" href="/blog/scent-for-cafes-singapore">
-<h2>Scent Marketing for Cafés in Singapore</h2>
-<p>How a signature scent draws people in and grows dwell time — with cost, best scents, and food safety.</p>
-<span class="more">Read the guide →</span>
+  <img class="thumb" src="/espresso.jpg" alt="Espresso pouring with golden crema" loading="lazy" decoding="async">
+  <div class="body">
+    <h2>Scent Marketing for Cafés in Singapore</h2>
+    <p>How a signature scent draws people in and grows dwell time — with cost, best scents, and food safety.</p>
+    <span class="more">Read the guide →</span>
+  </div>
 </a>
+</div>
 </main>
-<footer class="site"><div class="wrap">Scentura · Sensory branding for cold F&amp;B · Singapore · <a href="/">Home</a> · <a href="https://t.me/jocelynnnjy">Telegram</a> · <a href="https://www.linkedin.com/in/jocelynlimjinyan/">LinkedIn</a><br>Updated June 2026</div></footer>
+<footer class="foot"><div class="wrap">Scentura · Sensory branding for cold F&amp;B · Singapore · <a href="/">Home</a> · <a href="https://t.me/jocelynnnjy">Telegram</a> · <a href="https://www.linkedin.com/in/jocelynlimjinyan/">LinkedIn</a><br>Updated June 2026</div></footer>
 </body>
 </html>
