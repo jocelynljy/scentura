@@ -1,15 +1,10 @@
 {
   "cleanUrls": true,
-  "redirects": [
-    { "source": "/scent-marketing-singapore", "destination": "/blog/scent-marketing-singapore", "permanent": true },
-    { "source": "/scent-for-bubble-tea-singapore", "destination": "/blog/scent-for-bubble-tea-singapore", "permanent": true },
-    { "source": "/scent-for-cafes-singapore", "destination": "/blog/scent-for-cafes-singapore", "permanent": true }
-  ],
   "rewrites": [
-    { "source": "/blog", "destination": "/blog-index.html" },
-    { "source": "/blog/scent-marketing-singapore", "destination": "/scent-marketing-singapore.html" },
-    { "source": "/blog/scent-for-bubble-tea-singapore", "destination": "/scent-for-bubble-tea-singapore.html" },
-    { "source": "/blog/scent-for-cafes-singapore", "destination": "/scent-for-cafes-singapore.html" }
+    { "source": "/blog", "destination": "/blog-index" },
+    { "source": "/blog/scent-marketing-singapore", "destination": "/scent-marketing-singapore" },
+    { "source": "/blog/scent-for-bubble-tea-singapore", "destination": "/scent-for-bubble-tea-singapore" },
+    { "source": "/blog/scent-for-cafes-singapore", "destination": "/scent-for-cafes-singapore" }
   ],
   "headers": [
     {
