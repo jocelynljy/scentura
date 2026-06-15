@@ -4,7 +4,8 @@
     { "source": "/blog", "destination": "/blog-index" },
     { "source": "/blog/scent-marketing-singapore", "destination": "/scent-marketing-singapore" },
     { "source": "/blog/scent-for-bubble-tea-singapore", "destination": "/scent-for-bubble-tea-singapore" },
-    { "source": "/blog/scent-for-cafes-singapore", "destination": "/scent-for-cafes-singapore" }
+    { "source": "/blog/scent-for-cafes-singapore", "destination": "/scent-for-cafes-singapore" },
+    { "source": "/blog/does-scent-marketing-work", "destination": "/does-scent-marketing-work" }
   ],
   "headers": [
     {
