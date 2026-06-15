@@ -153,6 +153,10 @@
   nav a.active:not(.navcta)::after{transform:scaleX(1);}
   nav a.navcta{background:var(--ink);color:#fff;border-radius:0;padding:10px 20px;font-weight:600;transition:background .25s, transform .2s var(--ease-out);}
   @media(hover:hover){nav a.navcta:hover{background:var(--gold);transform:translateY(-2px);}}
+  .nav-guide{position:relative;}
+  .nav-guide::before{content:"";position:absolute;left:-13px;top:50%;transform:translateY(-50%);width:1px;height:15px;background:var(--line-dk);}
+  .nav-guide .ext{font-size:11px;display:inline-block;opacity:.7;transition:transform .2s var(--ease-out);}
+  @media(hover:hover){.nav-guide a:hover .ext{transform:translate(2px,-2px);}}
   .navtoggle{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px;}
   .navtoggle span{width:24px;height:2px;background:var(--ink);display:block;transition:transform .25s var(--ease-out), opacity .2s;}
   .navtoggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
@@ -166,6 +170,7 @@
     nav ul{flex-direction:column;gap:0;padding:6px 0;align-items:stretch;}
     nav a{display:block;padding:15px 28px;border-bottom:1px solid var(--line);font-size:15px;}
     nav a:not(.navcta)::after{display:none;}
+    .nav-guide::before{display:none;}
     nav a.active{color:var(--gold-deep);}
     nav a.navcta{background:transparent;color:var(--ink);border-radius:0;padding:16px 28px;border-bottom:1px solid var(--line);}
   }
@@ -440,6 +445,7 @@
       <li><a href="#why">Why Scent</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#faq">FAQ</a></li>
+      <li class="nav-guide"><a href="/blog">Guides <span class="ext" aria-hidden="true">↗</span></a></li>
       <li><a class="navcta" data-modal href="#apply">Free pilot</a></li>
     </ul></nav>
   </div>
