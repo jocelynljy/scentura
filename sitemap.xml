@@ -7,19 +7,25 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://scentura.space/scent-marketing-singapore</loc>
+    <loc>https://scentura.space/blog</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://scentura.space/blog/scent-marketing-singapore</loc>
     <lastmod>2026-06-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://scentura.space/scent-for-bubble-tea-singapore</loc>
+    <loc>https://scentura.space/blog/scent-for-bubble-tea-singapore</loc>
     <lastmod>2026-06-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://scentura.space/scent-for-cafes-singapore</loc>
+    <loc>https://scentura.space/blog/scent-for-cafes-singapore</loc>
     <lastmod>2026-06-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
