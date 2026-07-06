@@ -424,7 +424,7 @@
   @media(max-width:560px){.scenttrio{gap:10px;}.scenttrio figcaption{font-size:13px;}}
 
   /* scent library — sensory tiles */
-  .tiles{margin-top:44px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .tiles{margin-top:44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(216px,1fr));gap:18px;}
   @media(max-width:880px){.tiles{grid-template-columns:1fr 1fr;}}
   @media(max-width:520px){.tiles{grid-template-columns:1fr;}}
   .tile{position:relative;aspect-ratio:4/3;border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:transform .35s var(--ease-out), box-shadow .35s;}
@@ -444,6 +444,13 @@
   .famcard .label{display:block;}
   .famcard.custom{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
   .whyimg{display:block;width:100%;height:clamp(220px,32vh,360px);object-fit:cover;border-radius:14px;}
+  .famlib{display:grid;grid-template-columns:repeat(auto-fit,minmax(262px,1fr));gap:20px 36px;margin-top:14px;}
+  .famblock .label{display:block;margin-bottom:4px;}
+  .scentlist{list-style:none;margin:6px 0 0;padding:0;}
+  .scentlist li{padding:7px 0;border-bottom:1px solid var(--line);font-size:14px;line-height:1.45;}
+  .scentlist li:last-child{border-bottom:0;}
+  .sn{color:var(--ink);font-weight:600;}
+  .sd{color:var(--ink-soft);font-family:var(--serif);font-style:italic;}
 
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto;}
@@ -533,21 +540,70 @@
     <div class="wrap">
       <span class="label reveal">The scent library</span>
       <h2 class="reveal mt16" style="transition-delay:60ms;">What could yours<br>smell like?</h2>
-      <p class="lede reveal mt16" style="transition-delay:100ms;">Every scent we make lives in one of three families: fruity and fresh, tea and floral, or warm and sweet. The six below are the ones shops reach for most. We tune one to your brand, or blend something new.</p>
+      <p class="lede reveal mt16" style="transition-delay:100ms;">Every scent is food-true and tuned to your product, never a generic air freshener. These four are the ones shops fall for first. Below them, the full library to browse, and if your hero flavour isn't there, we blend it.</p>
       <div class="tiles">
-        <div class="tile reveal"><img src="brownsugar.jpg" alt="Brown sugar syrup swirling into milk tea" loading="lazy" decoding="async"><div class="t-body"><div class="t-name">Brown Sugar Milk Tea</div><div class="t-desc">Caramelised sugar curling into warm milk.</div></div></div>
-        <div class="tile reveal" style="transition-delay:70ms;"><img src="espresso.jpg" alt="Espresso pouring with golden crema" loading="lazy" decoding="async"><div class="t-body"><div class="t-name">Roasted Coffee</div><div class="t-desc">Dark and roasted, the smell of the morning queue.</div></div></div>
-        <div class="tile reveal" style="transition-delay:140ms;"><img src="ice_cream.jpg" alt="Vanilla bean ice cream" loading="lazy" decoding="async"><div class="t-body"><div class="t-name">Vanilla Ice Cream</div><div class="t-desc">Soft vanilla, cold and nostalgic.</div></div></div>
-        <div class="tile reveal"><img src="matcha.jpg" alt="Matcha whisked in a bowl" loading="lazy" decoding="async"><div class="t-body"><div class="t-name">Matcha</div><div class="t-desc">Earthy, green, freshly whisked calm.</div></div></div>
-        <div class="tile reveal" style="transition-delay:70ms;"><img src="peach.jpg" alt="A ripe peach sliced with honey" loading="lazy" decoding="async"><div class="t-body"><div class="t-name">Honey Peach</div><div class="t-desc">Ripe peach with a drizzle of honey.</div></div></div>
-        <div class="tile reveal" style="transition-delay:140ms;"><img src="chocolate_tart.jpg" alt="Dark chocolate tart" loading="lazy" decoding="async"><div class="t-body"><div class="t-name">Chocolate</div><div class="t-desc">Deep cocoa with a whisper of salt.</div></div></div>
+        <div class="tile reveal"><img src="ice_cream.jpg" alt="Vanilla bean ice cream in a waffle cone" loading="lazy" decoding="async"><div class="t-body"><div class="t-name">Vanilla Ice Cream</div><div class="t-desc">Cold, creamy vanilla with soft waffle-cone sweetness. The first lick before it drips.</div></div></div>
+        <div class="tile reveal" style="transition-delay:70ms;"><img src="chocolate_tart.jpg" alt="A rich, freshly baked chocolate dessert" loading="lazy" decoding="async"><div class="t-body"><div class="t-name">Cake, Cupcake &amp; Brownie</div><div class="t-desc">Warm butter, brown sugar and cocoa. The oven door swinging open.</div></div></div>
+        <div class="tile reveal" style="transition-delay:140ms;"><img src="brownsugar.jpg" alt="Golden caramel swirling into warm milk" loading="lazy" decoding="async"><div class="t-body"><div class="t-name">Hazelnut Caramel</div><div class="t-desc">Toasted hazelnut melted into burnt-sugar caramel. A whole café in one breath.</div></div></div>
+        <div class="tile reveal" style="transition-delay:210ms;"><img src="peach.jpg" alt="A ripe sliced peach beside brewed tea" loading="lazy" decoding="async"><div class="t-body"><div class="t-name">Peach Tea</div><div class="t-desc">Sun-ripe peach steeped in fragrant black tea. Sweet, juicy, just cooled.</div></div></div>
       </div>
       <div class="morelib reveal">
-        <span class="morelead label">The full library, by family</span>
-        <div class="famcols">
-          <div class="famcol"><span class="label">Fruity &amp; Fresh</span><p>Honey Peach · Lychee · Green Apple · Watermelon</p></div>
-          <div class="famcol"><span class="label">Tea &amp; Floral</span><p>Matcha · Hojicha · Green Tea · Osmanthus · Jasmine · White Tea</p></div>
-          <div class="famcol"><span class="label">Warm &amp; Sweet</span><p>Brown Sugar Milk Tea · Roasted Coffee · Vanilla · Chocolate · Honey · Coconut Milk · Caramel</p></div>
+        <span class="morelead label">The full library</span>
+        <div class="famlib">
+          <div class="famblock">
+            <span class="label">Desserts &amp; Bakery</span>
+            <ul class="scentlist">
+              <li><span class="sn">Cake, Cupcake &amp; Brownie</span> <span class="sd">warm butter, sugar and cocoa</span></li>
+              <li><span class="sn">Vanilla Ice Cream</span> <span class="sd">cold, creamy, waffle-cone sweet</span></li>
+              <li><span class="sn">Hot Chocolate &amp; Marshmallow</span> <span class="sd">molten cocoa and toasted marshmallow</span></li>
+              <li><span class="sn">Hazelnut Caramel</span> <span class="sd">toasted nuts in burnt sugar</span></li>
+              <li><span class="sn">Caramel Pudding</span> <span class="sd">silky caramel over set custard</span></li>
+              <li><span class="sn">Spiced Pumpkin Tart</span> <span class="sd">cinnamon, clove and baked pastry</span></li>
+              <li><span class="sn">Honey</span> <span class="sd">warm, golden, floral sweetness</span></li>
+              <li><span class="sn">Vanilla</span> <span class="sd">soft, sweet, comforting vanilla bean</span></li>
+              <li><span class="sn">Coconut</span> <span class="sd">creamy toasted coconut, sun-warm</span></li>
+            </ul>
+          </div>
+          <div class="famblock">
+            <span class="label">Fruit &amp; Fresh</span>
+            <ul class="scentlist">
+              <li><span class="sn">Strawberry</span> <span class="sd">just-picked, jammy and bright</span></li>
+              <li><span class="sn">Cherry</span> <span class="sd">plump, sweet-tart red cherry</span></li>
+              <li><span class="sn">Lychee</span> <span class="sd">floral, juicy, perfumed lychee</span></li>
+              <li><span class="sn">Grape &amp; Blueberry</span> <span class="sd">deep purple, sweet and jammy</span></li>
+              <li><span class="sn">Mango</span> <span class="sd">thick, golden, tropical ripeness</span></li>
+              <li><span class="sn">Passionfruit</span> <span class="sd">tangy, tropical, seed-sharp zing</span></li>
+              <li><span class="sn">Orange</span> <span class="sd">fresh-peeled, zesty and sweet</span></li>
+              <li><span class="sn">Lemon</span> <span class="sd">bright, sherbet-sharp citrus</span></li>
+              <li><span class="sn">Lime</span> <span class="sd">crisp, green, zesty lime</span></li>
+              <li><span class="sn">Spearmint</span> <span class="sd">cool, clean, garden-fresh mint</span></li>
+            </ul>
+          </div>
+          <div class="famblock">
+            <span class="label">Tea &amp; Milk</span>
+            <ul class="scentlist">
+              <li><span class="sn">Peach Tea</span> <span class="sd">ripe peach steeped in black tea</span></li>
+              <li><span class="sn">Oolong</span> <span class="sd">roasted, mellow, toasty tea leaf</span></li>
+              <li><span class="sn">Black Tea</span> <span class="sd">bold, malty, freshly brewed</span></li>
+              <li><span class="sn">Osmanthus Oolong</span> <span class="sd">apricot-sweet blossom over roasted tea</span></li>
+              <li><span class="sn">Almond Milk</span> <span class="sd">smooth, nutty, lightly sweet milk</span></li>
+            </ul>
+          </div>
+          <div class="famblock">
+            <span class="label">Candy &amp; Nostalgia</span>
+            <ul class="scentlist">
+              <li><span class="sn">Milk Candy</span> <span class="sd">chewy milk sweet, pure nostalgia</span></li>
+              <li><span class="sn">Bubblegum</span> <span class="sd">pink, sugary, playful bubblegum</span></li>
+              <li><span class="sn">Gummy Bear</span> <span class="sd">bright, fruity, sugar-dusted chew</span></li>
+            </ul>
+          </div>
+          <div class="famblock">
+            <span class="label">Coffee &amp; Cola</span>
+            <ul class="scentlist">
+              <li><span class="sn">Americano</span> <span class="sd">dark roast, hot and bittersweet</span></li>
+              <li><span class="sn">Cola</span> <span class="sd">fizzy, sweet-sharp cola pop</span></li>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="famcard crd custom reveal mt24">
