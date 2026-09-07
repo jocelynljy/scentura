@@ -281,7 +281,8 @@
 
   /* why it works — sensory cards */
   .whysec.band{background:radial-gradient(120% 85% at 50% 0%, #f8eedb 0%, #f2e7d1 60%, #ece1cc 100%);}
-  .triad{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:540px;margin-left:auto;margin-right:auto;}
+  .triad{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  @media(max-width:1024px){.triad{grid-template-columns:repeat(2,1fr);max-width:680px;margin-left:auto;margin-right:auto;}}
   @media(max-width:560px){.triad{grid-template-columns:1fr;max-width:420px;}}
   .wcard{position:relative;aspect-ratio:3/4;border-radius:20px;overflow:hidden;box-shadow:0 24px 54px -28px rgba(60,42,26,.55);transition:transform .35s var(--ease-out), box-shadow .35s;}
   .wcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease-out);}
