@@ -502,6 +502,48 @@
   .sn{color:var(--ink);font-weight:600;}
   .sd{color:var(--ink-soft);font-family:var(--serif);font-style:italic;}
 
+  /* pricing redesign — live pilot + ongoing */
+  .pilot-steps{display:flex;align-items:center;flex-wrap:wrap;gap:10px 6px;margin-top:30px;}
+  .pilot-steps .pstep{display:flex;align-items:center;gap:9px;}
+  .pilot-steps .pnum{width:26px;height:26px;border:1px solid var(--gold-soft);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:12px;color:var(--gold);flex:none;}
+  .pilot-steps .pname{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);}
+  .pilot-steps .pline{flex:1;min-width:20px;height:1px;background:var(--line);margin:0 6px;}
+  @media(max-width:820px){.pilot-steps .pline{display:none;}.pilot-steps{gap:12px 20px;}}
+  .pilotcard{display:grid;grid-template-columns:1fr 1.2fr;background:#fffdf8;border:1px solid var(--line);border-top:3px solid var(--gold-deep);border-radius:8px;overflow:hidden;box-shadow:0 26px 64px -36px rgba(60,42,26,.5);margin-top:26px;}
+  @media(max-width:820px){.pilotcard{grid-template-columns:1fr;}}
+  .pilotcard-left{padding:34px 32px 36px;border-right:1px solid var(--line);}
+  @media(max-width:820px){.pilotcard-left{border-right:none;border-bottom:1px solid var(--line);}}
+  .pilotcard-right{padding:34px 32px 36px;}
+  .pilot-kick{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);}
+  .pilot-kick::before{content:"● ";}
+  .pilot-price{font-family:var(--serif);font-size:clamp(40px,6vw,58px);font-weight:600;line-height:1;margin:14px 0 0;color:var(--ink);letter-spacing:-.01em;}
+  .pilot-price-note{font-weight:700;color:var(--ink);margin:16px 0 4px;font-size:15px;line-height:1.35;}
+  .pilot-credit{font-size:13.5px;color:var(--ink-soft);margin:0;line-height:1.5;}
+  .pilot-minis{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+  .pilot-mini{border-top:1px solid var(--line);padding-top:12px;}
+  .pilot-mini b{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--ink);display:block;}
+  .pilot-mini span{font-size:12.5px;color:var(--ink-soft);line-height:1.45;display:block;margin-top:5px;}
+  .pilot-rt-h{font-family:var(--serif);font-size:clamp(23px,3vw,29px);font-weight:600;line-height:1.12;margin:0;color:var(--ink);}
+  .pilotcard-right > p{font-size:14.5px;color:var(--ink-soft);line-height:1.6;margin:14px 0 0;}
+  .pilot-checks{display:grid;grid-template-columns:1fr 1fr;gap:14px 24px;margin:22px 0 24px;}
+  @media(max-width:520px){.pilot-checks{grid-template-columns:1fr;}}
+  .pilot-checks div{font-size:13.5px;color:var(--ink);line-height:1.4;border-top:1px solid var(--line);padding:10px 0 0 16px;position:relative;}
+  .pilot-checks div::before{content:"—";position:absolute;left:0;top:9px;color:var(--gold);}
+  .pilot-cta-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+  .pilot-note{font-style:italic;font-size:12.5px;color:var(--ink-soft);max-width:32ch;line-height:1.4;}
+  .pricing-sep{text-align:center;margin:42px 0;}
+  .pricing-sep .sepdot{width:34px;height:34px;border:1px solid var(--gold-soft);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:var(--gold);font-size:15px;}
+  .pricing-sep .seplabel{display:block;margin-top:14px;font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);}
+  .ongoing-cards{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:38px;}
+  @media(max-width:760px){.ongoing-cards{grid-template-columns:1fr;}}
+  .ongoing-card{background:#fffdf8;border:1px solid var(--line);border-top:3px solid var(--gold-deep);border-radius:8px;padding:32px 32px 34px;box-shadow:0 18px 46px -32px rgba(60,42,26,.4);}
+  .ongoing-card h3{font-family:var(--serif);font-size:clamp(25px,3.2vw,33px);font-weight:600;line-height:1.05;margin:12px 0 0;color:var(--ink);letter-spacing:-.01em;}
+  .ongoing-card p{font-size:15px;color:var(--ink-soft);line-height:1.6;margin:14px 0 20px;}
+  .ongoing-card a{font-weight:700;color:var(--gold-deep);text-decoration:none;font-size:15px;}
+  @media(hover:hover){.ongoing-card a:hover{text-decoration:underline;}}
+  .guarantee-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 30px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 4px;margin-top:38px;}
+  .guarantee-row span{font-size:13.5px;color:var(--ink-soft);position:relative;padding-left:18px;}
+  .guarantee-row span::before{content:"";position:absolute;left:0;top:5px;width:9px;height:9px;border:1px solid var(--gold);border-radius:50%;}
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto;}
     .reveal{opacity:1 !important;transform:none !important;transition:none !important;}
@@ -716,48 +758,72 @@
   <!-- PRICING -->
   <section id="pricing" class="band glow left">
     <div class="wrap">
-      <span class="label reveal">Pricing</span>
-      <h2 class="reveal mt16" style="transition-delay:60ms;">Simple to start.<br>Grows with you.</h2>
-      <p class="lede reveal mt16" style="transition-delay:100ms;">Founding partners begin with a complimentary pilot. From there, a plan that fits your space, designed low-touch so it's effortless to run.</p>
-      <div class="pcards reveal">
-        <div class="pcard crd feature">
-          <span class="ptag">Start here</span>
-          <span class="label">Founding Partner Pilot</span>
-          <div class="pprice">Complimentary</div>
-          <p class="psub">A fully managed two-week pilot, normally about S$300, waived for a limited number of founding partners. You risk nothing.</p>
-          <ul class="plist">
-            <li>People drift in before they know why</li>
-            <li>Proof in your own takings, not our promises</li>
-            <li>No cost, no equipment to buy, no lock-in</li>
-          </ul>
-          <a class="btn solid pbtn" data-modal href="#apply"><span>Claim a pilot</span> <span class="arr">→</span></a>
+      <span class="label reveal">Start with a live pilot</span>
+      <h2 class="reveal mt16" style="transition-delay:60ms;">See the impact in your space<br>before you commit.</h2>
+      <p class="lede reveal mt16" style="transition-delay:100ms;">We set up a live scent experience in your venue for two weeks. We assess the space, install the right hardware, and calibrate intensity around your actual airflow and customer traffic, so you can decide with confidence before moving to a monthly programme.</p>
+      <div class="pilot-steps reveal">
+        <div class="pstep"><span class="pnum">01</span><span class="pname">Assess</span></div>
+        <div class="pline"></div>
+        <div class="pstep"><span class="pnum">02</span><span class="pname">Install &amp; calibrate</span></div>
+        <div class="pline"></div>
+        <div class="pstep"><span class="pnum">03</span><span class="pname">Run live for 2 weeks</span></div>
+        <div class="pline"></div>
+        <div class="pstep"><span class="pnum">04</span><span class="pname">Decide</span></div>
+      </div>
+      <div class="pilotcard reveal">
+        <div class="pilotcard-left">
+          <div class="pilot-kick">Two-week live pilot</div>
+          <div class="pilot-price">S$50–150</div>
+          <p class="pilot-price-note">One upfront pilot fee. Two full weeks, live in your venue.</p>
+          <p class="pilot-credit">If you continue, the full S$50–S$150 is credited to month one.</p>
+          <div class="pilot-minis">
+            <div class="pilot-mini"><b>S$50</b><span>Independent cafés, F&amp;B concepts, and retail kiosks</span></div>
+            <div class="pilot-mini"><b>S$150</b><span>Multi-level or larger commercial environments</span></div>
+          </div>
         </div>
-        <div class="pcard crd">
-          <span class="label">Signature</span>
-          <div class="pprice">from S$15<span class="per">/ day · per outlet</span></div>
-          <p class="psub">For independent cafés and single outlets.</p>
-          <ul class="plist">
-            <li>Choose from our scent library</li>
-            <li>Diffuser included, monthly refills</li>
-            <li>Starts with a complimentary 2-week pilot: no equipment cost, no lock-in</li>
-          </ul>
-          <a class="btn ghost pbtn" data-modal href="#apply">Claim a pilot</a>
-        </div>
-        <div class="pcard crd">
-          <span class="label">Multi-Outlet &amp; Enterprise</span>
-          <div class="pprice">By quote</div>
-          <p class="psub">For chains, malls and high-traffic sites.</p>
-          <ul class="plist">
-            <li>Fully managed programme with dedicated servicing</li>
-            <li>Usage reporting, adjustable intensity and scheduling</li>
-            <li>Insured equipment and compliance documentation</li>
-            <li>Per-outlet rate set by space and service</li>
-          </ul>
-          <a class="btn ghost pbtn" data-modal href="#apply">Let's talk</a>
+        <div class="pilotcard-right">
+          <h3 class="pilot-rt-h">A real-world trial, not a sales promise.</h3>
+          <p>Experience the fragrance and deployment in your actual operating environment, with your staff, customers, foot traffic, and airflow, before deciding whether monthly service is right for you.</p>
+          <div class="pilot-checks">
+            <div>On-site assessment and deployment recommendation</div>
+            <div>Fragrance testing in your real environment</div>
+            <div>Commercial-grade hardware, installation, and calibration</div>
+            <div>Two weeks of live operation, managed by Scentura</div>
+          </div>
+          <div class="pilot-cta-row">
+            <a class="btn solid" data-modal href="#apply"><span>Book your two-week pilot</span> <span class="arr">→</span></a>
+            <span class="pilot-note">If you do not continue, the pilot simply ends after two weeks, no monthly commitment.</span>
+          </div>
         </div>
       </div>
-      <p class="reveal" style="text-align:center;max-width:32ch;margin:46px auto 0;font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.6vw,30px);line-height:1.25;color:var(--ink);">Start with a founding pilot. Keep it only when your customers can't stay away.</p>
-      <p class="micro mt16 reveal" style="font-style:italic;text-align:center;">Every space is priced on its size, foot traffic and level of service, so a large or high-traffic outlet is quoted differently from a small café. The S$15 a day rate is a starting point for a single small outlet; multi-outlet groups are quoted as a package.</p>
+      <div class="pricing-sep reveal">
+        <span class="sepdot">↓</span>
+        <span class="seplabel">Only if the pilot earns your yes</span>
+      </div>
+      <div class="reveal" style="text-align:center;">
+        <span class="label">Then choose your ongoing service</span>
+        <h2 class="mt16" style="text-align:center;">Continue with a fixed monthly programme<br>designed around your venue.</h2>
+      </div>
+      <div class="ongoing-cards reveal">
+        <div class="ongoing-card">
+          <span class="label">Single space</span>
+          <h3>A fixed monthly rate</h3>
+          <p>For cafés, boutique retail, and single-floor offices. Hardware, refills, servicing, and calibrated intensity are all included.</p>
+          <a data-modal href="#apply">Continue with a single-space plan →</a>
+        </div>
+        <div class="ongoing-card">
+          <span class="label">Enterprise &amp; chains</span>
+          <h3>Consistency at every location</h3>
+          <p>For multi-site retail, hospitality, and commercial estates, with HVAC integration, concealed installation, and managed deployment.</p>
+          <a data-modal href="#apply">Discuss a multi-site programme →</a>
+        </div>
+      </div>
+      <div class="guarantee-row reveal">
+        <span>Full pilot-fee refund if it is not right</span>
+        <span>No equipment to buy</span>
+        <span>No surprise maintenance or refill fees</span>
+        <span>No long-term lock-in</span>
+      </div>
     </div>
   </section>
 
