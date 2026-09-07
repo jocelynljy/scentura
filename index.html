@@ -460,6 +460,28 @@
   .tile .t-name{font-family:var(--serif);font-weight:600;font-size:22px;line-height:1.08;color:#fff;}
   .tile .t-desc{font-size:13.5px;color:rgba(255,255,255,.86);margin:6px 0 0;line-height:1.45;}
   @media(hover:hover){.tile:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);}.tile:hover img{transform:scale(1.06);}}
+  /* signature filter + portrait cards */
+  .sigfilter{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;}
+  .pill{font-family:var(--sans);font-size:13.5px;font-weight:600;color:var(--ink-soft);background:transparent;border:1px solid var(--line);border-radius:999px;padding:9px 18px;cursor:pointer;transition:background .2s,color .2s,border-color .2s;}
+  @media(hover:hover){.pill:hover{border-color:var(--gold);color:var(--ink);}}
+  .pill.active{background:var(--gold-deep);border-color:var(--gold-deep);color:#fff;}
+  .sigsplit{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-top:34px;padding-top:26px;border-top:1px solid var(--line);}
+  .sigsplit h3{font-family:var(--serif);font-size:26px;font-weight:600;margin:0;color:var(--ink);letter-spacing:-.01em;}
+  .sigsplit .sigsub{margin:0;max-width:44ch;text-align:right;font-size:14px;color:var(--ink-soft);line-height:1.5;}
+  @media(max-width:760px){.sigsplit{flex-direction:column;align-items:flex-start;}.sigsplit .sigsub{text-align:left;}}
+  .sigflow{margin-top:22px;display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
+  @media(max-width:1024px){.sigflow{grid-template-columns:repeat(3,1fr);}}
+  @media(max-width:620px){.sigflow{grid-template-columns:repeat(2,1fr);}}
+  .sigcard{position:relative;aspect-ratio:3/4.6;border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:transform .35s var(--ease-out), box-shadow .35s;}
+  .sigcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease-out);}
+  .sigcard::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(18,12,8,.9) 0%, rgba(18,12,8,.5) 34%, rgba(18,12,8,.08) 62%, transparent 82%);}
+  .sigcard .sig-body{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:20px 18px;}
+  .sigcard .sig-kick{font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);}
+  .sigcard .sig-name{font-family:var(--serif);font-weight:600;font-size:21px;line-height:1.08;color:#fff;margin-top:8px;}
+  .sigcard .sig-notes{font-size:12px;color:rgba(255,255,255,.82);margin-top:8px;letter-spacing:.02em;}
+  @media(hover:hover){.sigcard:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);}.sigcard:hover img{transform:scale(1.06);}}
+  .sigcard.hide{display:none;}
+  .sigfoot{margin-top:22px;font-style:italic;font-size:13px;color:var(--faint);}
   .morelib{margin-top:30px;border-top:1px solid var(--line);padding-top:26px;}
   .morelib .morelead{display:block;margin-bottom:18px;}
   .famcols{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
@@ -593,16 +615,44 @@
   <section id="scents" class="band glow left">
     <div class="wrap">
       <span class="label reveal">The scent library</span>
-      <h2 class="reveal mt16" style="transition-delay:60ms;">What could your space<br>smell like?</h2>
-      <p class="lede reveal mt16" style="transition-delay:100ms;">Atmosphere is about shaping behaviour. From food-true aromas that safely trigger appetite at the counter, to premium ambient profiles that elevate retail luxury, every scent we deploy is engineered for a specific commercial outcome. It is atmospheric design, built strictly for business impact.</p>
-      <div class="tiles">
-        <div class="tile reveal"><img src="ice_cream.jpg" alt="A scoop of creamy ice cream in a waffle cone" loading="lazy" decoding="async"><div class="t-body"><div class="t-name">Ice Cream</div><div class="t-desc">Creamy vanilla and warm waffle cone, the smell of a fresh scoop. Made your way, from classic creamy to fruity or bubblegum.</div></div></div>
-        <div class="tile reveal" style="transition-delay:70ms;"><img src="cake.jpg" alt="A freshly baked vanilla cake and cupcakes dusted with icing sugar" loading="lazy" decoding="async"><div class="t-body"><div class="t-name">Cake &amp; Cupcake</div><div class="t-desc">Warm vanilla sponge, exactly like cakes rising in the oven. Flavoured to whatever you bake.</div></div></div>
-        <div class="tile reveal" style="transition-delay:140ms;"><img src="hotchocolate.jpg" alt="A steaming mug of hot chocolate topped with toasted marshmallows" loading="lazy" decoding="async"><div class="t-body"><div class="t-name">Hot Chocolate &amp; Marshmallow</div><div class="t-desc">Molten cocoa and toasted marshmallow. Warm, sweet and nostalgic.</div></div></div>
-        <div class="tile reveal" style="transition-delay:210ms;"><img src="mango.jpg" alt="Fresh ripe mango, sliced, beside a glass of mango juice" loading="lazy" decoding="async"><div class="t-body"><div class="t-name">Mango</div><div class="t-desc">Sweet, juicy, sun-ripe mango. Fresh-pressed and tropical.</div></div></div>
-        <div class="tile reveal" style="transition-delay:280ms;"><img src="peachtea.jpg" alt="A glass of iced peach tea with fresh peach slices" loading="lazy" decoding="async"><div class="t-body"><div class="t-name">Peach Tea</div><div class="t-desc">Sun-ripe peach steeped in fragrant tea. Sweet, juicy, just cooled.</div></div></div>
-        <div class="tile reveal" style="transition-delay:350ms;"><img src="strawberry.jpg" alt="Fresh strawberries with a pink strawberry milkshake" loading="lazy" decoding="async"><div class="t-body"><div class="t-name">Strawberry</div><div class="t-desc">Soft, ripe and candy-sweet strawberry. Pure pink nostalgia.</div></div></div>
+      <h2 class="reveal mt16" style="transition-delay:60ms;">Choose the feeling<br>before the fragrance.</h2>
+      <p class="lede reveal mt16" style="transition-delay:100ms;">Profiles designed around the experience your space needs to create. From a quiet signal of prestige to the anticipation that draws people in.</p>
+      <div class="sigfilter reveal" style="transition-delay:140ms;">
+        <button type="button" class="pill active" data-filter="all">Featured signatures</button>
+        <button type="button" class="pill" data-filter="luxury">Luxury &amp; Prestige</button>
+        <button type="button" class="pill" data-filter="mood">Mood &amp; Atmosphere</button>
+        <button type="button" class="pill" data-filter="cravings">Food cravings</button>
+        <button type="button" class="pill" data-filter="fresh">Fresh &amp; Pristine</button>
       </div>
+      <div class="sigsplit reveal">
+        <h3>Five ways to shape a space.</h3>
+        <p class="sigsub">Each signature is adapted to your venue, audience, and the behaviour you want to encourage.</p>
+      </div>
+      <div class="sigflow">
+        <div class="sigcard" data-cat="luxury"><img src="sig-luxury.jpg" alt="A cup of pale white tea with fresh thyme in warm daylight" loading="lazy" decoding="async"><div class="sig-body"><div class="sig-kick">Luxury</div><div class="sig-name">White Tea<br>&amp; Thyme</div><div class="sig-notes">Elegant · Crisp · Refined</div></div></div>
+        <div class="sigcard" data-cat="fresh"><img src="sig-fresh.jpg" alt="A glass vessel with bamboo and sea salt on pale marble" loading="lazy" decoding="async"><div class="sig-body"><div class="sig-kick">Freshness</div><div class="sig-name">Bamboo<br>&amp; Sea Salt</div><div class="sig-notes">Clean · Airy · Mineral-fresh</div></div></div>
+        <div class="sigcard" data-cat="mood"><img src="sig-mood.jpg" alt="A glowing amber resin resting on charred wood in low light" loading="lazy" decoding="async"><div class="sig-body"><div class="sig-kick">Mood</div><div class="sig-name">Amber &amp;<br>Smoked Woods</div><div class="sig-notes">Warm · Deep · Magnetic</div></div></div>
+        <div class="sigcard" data-cat="cravings"><img src="ice_cream.jpg" alt="A scoop of creamy ice cream in a waffle cone" loading="lazy" decoding="async"><div class="sig-body"><div class="sig-kick">Dessert cravings</div><div class="sig-name">Ice Cream<br>&amp; Cakes</div><div class="sig-notes">Sweet · Creamy · Fresh</div></div></div>
+        <div class="sigcard" data-cat="cravings"><img src="sig-cafe.jpg" alt="A dark espresso being poured into a stoneware cup with rising steam" loading="lazy" decoding="async"><div class="sig-body"><div class="sig-kick">Café cravings</div><div class="sig-name">Roasted<br>Espresso</div><div class="sig-notes">Dark roast · Hot · Bittersweet</div></div></div>
+      </div>
+      <p class="sigfoot reveal">Select an outcome to explore the profile, the atmosphere it creates, and where it works best.</p>
+      <script>
+        (function(){
+          var pills=document.querySelectorAll('.sigfilter .pill');
+          var cards=document.querySelectorAll('.sigflow .sigcard');
+          pills.forEach(function(p){
+            p.addEventListener('click',function(){
+              pills.forEach(function(x){x.classList.remove('active');});
+              p.classList.add('active');
+              var f=p.getAttribute('data-filter');
+              cards.forEach(function(c){
+                var show=(f==='all')||(c.getAttribute('data-cat')===f);
+                c.classList.toggle('hide',!show);
+              });
+            });
+          });
+        })();
+      </script>
       <div class="morelib reveal">
         <span class="morelead label">More scents, by psychology &amp; space</span>
         <p class="moreintro">Every profile in our library is engineered to trigger a specific behavioural response.</p>
