@@ -279,8 +279,9 @@
 
   /* why it works — sensory cards */
   .whysec.band{background:radial-gradient(120% 85% at 50% 0%, #f8eedb 0%, #f2e7d1 60%, #ece1cc 100%);}
-  .triad{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-  @media(max-width:880px){.triad{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto;}}
+  .triad{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  @media(max-width:1024px){.triad{grid-template-columns:repeat(2,1fr);max-width:680px;margin-left:auto;margin-right:auto;}}
+  @media(max-width:560px){.triad{grid-template-columns:1fr;max-width:420px;}}
   .wcard{position:relative;aspect-ratio:3/4;border-radius:20px;overflow:hidden;box-shadow:0 24px 54px -28px rgba(60,42,26,.55);transition:transform .35s var(--ease-out), box-shadow .35s;}
   .wcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease-out);}
   .wcard::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(22,13,8,.92) 0%, rgba(22,13,8,.55) 36%, rgba(22,13,8,.12) 64%, transparent 84%);}
@@ -509,14 +510,15 @@
   <!-- WHY IT WORKS -->
   <section class="band glow whysec">
     <div class="wrap center">
-      <span class="label reveal">Why it works</span>
+      <span class="label reveal">The psychology of scent</span>
       <h2 class="reveal mt16" style="transition-delay:60ms;">Smell hits the <em class="acc">brain</em><br>before thought does.</h2>
       <div class="muted-rule reveal" style="transition-delay:100ms;"></div>
-      <p class="lede reveal" style="margin:0 auto;transition-delay:120ms;">You weren't even hungry. The smell of warm butter hit the air, and you were in the queue before you decided. That is scent: the one sense wired straight to memory and emotion, with no filter and no off switch. At your counter, it makes the decision half-made before a word is read. Three things happen at once.</p>
+      <p class="lede reveal" style="margin:0 auto;transition-delay:120ms;">You weren't hungry, but a warm aroma put you in the queue. You walked into a lobby and instantly felt a wave of calm, exclusive luxury. That is scent: the one sense wired straight to memory and emotion, with no filter and no off switch. In any commercial venue, it makes your customer's decision half-made before a word is read. We engineer this invisible pull in four distinct ways.</p>
       <div class="triad mt56">
-        <div class="wcard reveal"><img src="crave.jpg" alt="Freshly baked sourdough loaf with steam rising" loading="lazy" decoding="async"><div class="wbody"><div class="wnum">01</div><h3>Crave</h3><p>A scent sparks the craving before they've even seen the menu.</p><span class="wtag">The spark</span></div></div>
-        <div class="wcard reveal" style="transition-delay:90ms;"><img src="linger.jpg" alt="A rich espresso being pulled with golden crema and rising steam" loading="lazy" decoding="async"><div class="wbody"><div class="wnum">02</div><h3>Linger</h3><p>A space that smells good is a space people stay in, and spend in.</p><span class="wtag">The pull</span></div></div>
-        <div class="wcard reveal" style="transition-delay:180ms;"><img src="remember.jpg" alt="A dark chocolate tart finished with sea salt" loading="lazy" decoding="async"><div class="wbody"><div class="wnum">03</div><h3>Remember</h3><p>The scent they can't quite name is the one that brings them back.</p><span class="wtag">The mark</span></div></div>
+        <div class="wcard reveal"><img src="elevate-luxury.jpg" alt="A crystal glass, white orchid and sandalwood on dark marble in warm candlelight" loading="lazy" decoding="async"><div class="wbody"><div class="wnum">01</div><h3>Elevate Luxury</h3><p>The invisible signature that makes a retail or corporate space feel instantly premium and high-status.</p><span class="wtag">The prestige</span></div></div>
+        <div class="wcard reveal" style="transition-delay:90ms;"><img src="evoke-mood.jpg" alt="Incense resin smouldering in a bowl with soft smoke, candlelight and a dried rose" loading="lazy" decoding="async"><div class="wbody"><div class="wnum">02</div><h3>Evoke Mood</h3><p>The atmospheric baseline that dictates exactly how guests feel the second they step inside.</p><span class="wtag">The aura</span></div></div>
+        <div class="wcard reveal" style="transition-delay:180ms;"><img src="crave.jpg" alt="Freshly baked sourdough loaf with steam rising" loading="lazy" decoding="async"><div class="wbody"><div class="wnum">03</div><h3>Trigger Cravings</h3><p>A scent sparks the craving before they've even seen the menu.</p><span class="wtag">The spark</span></div></div>
+        <div class="wcard reveal" style="transition-delay:270ms;"><img src="project-freshness.jpg" alt="Folded white towels, eucalyptus and fresh lime in bright, clean light" loading="lazy" decoding="async"><div class="wbody"><div class="wnum">04</div><h3>Project Freshness</h3><p>The unspoken guarantee that instantly communicates a pristine, uncompromisingly clean environment.</p><span class="wtag">The assurance</span></div></div>
       </div>
       <p class="whyfoot reveal">Not just a fragrance. A sensory experience.</p>
     </div>
