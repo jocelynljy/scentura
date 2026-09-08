@@ -519,7 +519,15 @@
   .pilot-price{font-family:var(--serif);font-size:clamp(40px,6vw,58px);font-weight:600;line-height:1;margin:14px 0 0;color:var(--ink);letter-spacing:-.01em;}
   .pilot-price-note{font-weight:700;color:var(--ink);margin:16px 0 4px;font-size:15px;line-height:1.35;}
   .pilot-credit{font-size:13.5px;color:var(--ink-soft);margin:0;line-height:1.5;}
-  .pilot-minis{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+  .pilot-guarantee{display:flex;align-items:center;gap:16px;border:1px solid var(--line);border-radius:6px;padding:14px 18px;margin-top:22px;}
+  .pilot-guarantee .pg-badge{width:46px;height:46px;flex:none;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:13px;font-weight:600;color:var(--gold-deep);}
+  .pilot-guarantee b{display:block;font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);}
+  .pilot-guarantee .pg-txt span{display:block;font-size:13px;color:var(--ink-soft);line-height:1.4;margin-top:3px;}
+  .pilot-guarantee{display:flex;align-items:center;gap:15px;border:1px solid var(--line);border-radius:8px;padding:15px 17px;margin-top:22px;}
+  .pilot-guarantee .gcircle{width:46px;height:46px;flex:none;border:1px solid var(--gold-deep);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:12px;font-weight:700;color:var(--gold-deep);}
+  .pilot-guarantee .gtext b{display:block;font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--ink);}
+  .pilot-guarantee .gtext span{display:block;font-size:13px;color:var(--ink-soft);line-height:1.45;margin-top:4px;}
+  .pilot-minis{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px;}
   .pilot-mini{border-top:1px solid var(--line);padding-top:12px;}
   .pilot-mini b{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--ink);display:block;}
   .pilot-mini span{font-size:12.5px;color:var(--ink-soft);line-height:1.45;display:block;margin-top:5px;}
@@ -758,9 +766,9 @@
   <!-- PRICING -->
   <section id="pricing" class="band glow left">
     <div class="wrap">
-      <span class="label reveal">Start with a live pilot</span>
-      <h2 class="reveal mt16" style="transition-delay:60ms;">See the impact in your space<br>before you commit.</h2>
-      <p class="lede reveal mt16" style="transition-delay:100ms;">We set up a live scent experience in your venue for two weeks. We assess the space, install the right hardware, and calibrate intensity around your actual airflow and customer traffic, so you can decide with confidence before moving to a monthly programme.</p>
+      <span class="label reveal">Start with a money-back pilot</span>
+      <h2 class="reveal mt16" style="transition-delay:60ms;">Try it in your space.<br>Love it—or get a full refund.</h2>
+      <p class="lede reveal mt16" style="transition-delay:100ms;">For two weeks, we install and manage a live scent experience in your venue. You see how it feels with your real staff, customers, airflow, and foot traffic—then decide whether to continue monthly. If it is not right for your space, we refund the full pilot fee.</p>
       <div class="pilot-steps reveal">
         <div class="pstep"><span class="pnum">01</span><span class="pname">Assess</span></div>
         <div class="pline"></div>
@@ -772,18 +780,22 @@
       </div>
       <div class="pilotcard reveal">
         <div class="pilotcard-left">
-          <div class="pilot-kick">Two-week live pilot</div>
+          <div class="pilot-kick">Fully refundable two-week pilot</div>
           <div class="pilot-price">S$50–150</div>
           <p class="pilot-price-note">One upfront pilot fee. Two full weeks, live in your venue.</p>
-          <p class="pilot-credit">If you continue, the full S$50–S$150 is credited to month one.</p>
+          <p class="pilot-credit">No equipment to buy. No monthly commitment.</p>
+          <div class="pilot-guarantee">
+            <span class="gcircle">100%</span>
+            <span class="gtext"><b>Money-back guarantee</b><span>Not right after two weeks? Your full pilot fee is refunded.</span></span>
+          </div>
           <div class="pilot-minis">
             <div class="pilot-mini"><b>S$50</b><span>Independent cafés, F&amp;B concepts, and retail kiosks</span></div>
             <div class="pilot-mini"><b>S$150</b><span>Multi-level or larger commercial environments</span></div>
           </div>
         </div>
         <div class="pilotcard-right">
-          <h3 class="pilot-rt-h">A real-world trial, not a sales promise.</h3>
-          <p>Experience the fragrance and deployment in your actual operating environment, with your staff, customers, foot traffic, and airflow, before deciding whether monthly service is right for you.</p>
+          <h3 class="pilot-rt-h">A real-world trial, backed by a real guarantee.</h3>
+          <p>Experience the fragrance and deployment in your actual operating environment—with your staff, customers, foot traffic, and airflow. If the result is not right for your venue, we simply remove the equipment and return your pilot fee in full.</p>
           <div class="pilot-checks">
             <div>On-site assessment and deployment recommendation</div>
             <div>Fragrance testing in your real environment</div>
@@ -792,7 +804,7 @@
           </div>
           <div class="pilot-cta-row">
             <a class="btn solid" data-modal href="#apply"><span>Book your two-week pilot</span> <span class="arr">→</span></a>
-            <span class="pilot-note">If you do not continue, the pilot simply ends after two weeks, no monthly commitment.</span>
+            <span class="pilot-note">Keep it only if you love the result. Otherwise, receive a full pilot-fee refund—no ongoing contract.</span>
           </div>
         </div>
       </div>
